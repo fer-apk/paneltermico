@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Térmico - Header</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Barra naranja superior con texto deslizante */
+        .top-bar {
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            height: 60px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .sliding-text {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            white-space: nowrap;
+            animation: slideRight 15s linear infinite;
+            position: absolute;
+        }
+
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+
+        /* Header principal */
+        .header-container {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="ceiling" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><rect width="100" height="100" fill="%23f5f5f5"/><rect x="2" y="2" width="96" height="96" fill="%23ffffff" stroke="%23ddd" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23ceiling)"/><g transform="perspective(800px) rotateX(45deg) translate(0,200)"><rect x="0" y="0" width="1200" height="20" fill="%23e0e0e0"/><rect x="0" y="40" width="1200" height="20" fill="%23d5d5d5"/><rect x="0" y="80" width="1200" height="20" fill="%23cacaca"/></g></svg>') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        /* Navegación superior */
+        .nav-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff6b35;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .catalog-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .catalog-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ff6b35;
+            transform: translateY(-2px);
+        }
+
+        /* Contenido principal */
+        .main-content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .experience-text {
+            font-size: 22px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        .counter {
+            font-size: 28px;
+            font-weight: bold;
+            color: #ff6b35;
+            display: inline-block;
+        }
+
+        .main-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 40px 0;
+            line-height: 1.1;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 1s;
+        }
+
+        .main-title .highlight {
+            color: #ff6b35;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 50px;
+            font-style: italic;
+            opacity: 0.9;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 1.5s;
+        }
+
+        /* Botones de contacto */
+        .contact-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 2s;
+        }
+
+        .contact-btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 180px;
+            justify-content: center;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .call-btn {
+            background: #FFA500;
+            color: white;
+        }
+
+        .call-btn:hover {
+            background: #ff8c00;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 165, 0, 0.3);
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-bar {
+                padding: 0 20px;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+            
+            .sliding-text {
+                font-size: 16px;
+            }
+        }
+
+        /* Efectos adicionales */
+        .header-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.1) 100%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra naranja superior con texto deslizante -->
+    <div class="top-bar">
+        <div class="sliding-text">
+            El mejor precio en sistemas aislantes y paneles térmico de Jalisco
+        </div>
+    </div>
+
+    <!-- Header principal -->
+    <div class="header-container">
+        <!-- Navegación superior -->
+        <div class="nav-bar">
+            <div class="logo" onclick="window.location.href='#'">
+                paneltermico.com
+            </div>
+            <button class="catalog-btn" onclick="window.location.href='#catalogo'">
+                Catálogo
+            </button>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <div class="experience-text">
+                + de <span class="counter" id="counter">0</span> años de experiencia
+            </div>
+
+            <h1 class="main-title">
+                <span class="highlight">Venta</span> de Sistemas Aislantes<br>
+                y Paneles Térmicos
+            </h1>
+
+            <p class="subtitle">
+                Entrega rápida, asesoría especializada y calidad garantizada
+            </p>
+
+            <div class="contact-buttons">
+                <a href="https://wa.me/523311234567" class="contact-btn whatsapp-btn">
+                    <span>📱</span>
+                    WHATSAPP
+                </a>
+                <a href="tel:+523311234567" class="contact-btn call-btn">
+                    <span>📞</span>
+                    LLAMADA
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animación del contador de años
+        function animateCounter() {
+            const counter = document.getElementById('counter');
+            const target = 20;
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.floor(current);
+                }
+            }, 50);
+        }
+
+        // Iniciar animación del contador después de un delay
+        setTimeout(animateCounter, 1500);
+
+        // Efecto de paralax suave en el scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const header = document.querySelector('.header-container');
+            header.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Animación adicional para los botones
+        document.querySelectorAll('.contact-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Efecto de typing en el texto deslizante
+        let textIndex = 0;
+        const texts = [
+            "El mejor precio en sistemas aislantes y paneles térmico de Jalisco",
+            "Más de 20 años brindando soluciones térmicas de calidad",
+            "Asesoría especializada y entrega rápida garantizada"
+        ];
+
+        function changeText() {
+            const slidingText = document.querySelector('.sliding-text');
+            slidingText.textContent = texts[textIndex];
+            textIndex = (textIndex + 1) % texts.length;
+        }
+
+        // Cambiar texto cada 15 segundos (sincronizado con la animación)
+        setInterval(changeText, 15000);
+    </script>
+
+    <!-- Carrusel de productos - Segunda sección -->
+    <section class="product-carousel-section">
+        <div class="carousel-container">
+            <h2 class="carousel-title">NUESTROS PRODUCTOS DESTACADOS</h2>
+            
+            <!-- Botones de navegación -->
+            <button id="prevBtn" class="nav-button nav-button-left" aria-label="Anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15,18 9,12 15,6"></polyline>
+                </svg>
+            </button>
+            
+            <button id="nextBtn" class="nav-button nav-button-right" aria-label="Siguiente">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9,18 15,12 9,6"></polyline>
+                </svg>
+            </button>
+            
+            <!-- Carrusel -->
+            <div class="carousel-wrapper">
+                <div class="product-track" id="productTrack">
+                    <!-- Producto 1 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-bg fanosa-bg"></div>
+                            <div class="product-watermark">paneltermico.com</div>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Crect x='50' y='50' width='200' height='100' fill='%23e0e0e0' rx='5'/%3E%3Crect x='60' y='60' width='180' height='80' fill='%23d0d0d0' rx='3'/%3E%3C/svg%3E" alt="FANOSA INSUPANEL">
+                        </div>
+                        <h3 class="product-name">FANOSA INSUPANEL</h3>
+                    </div>
+                    
+                    <!-- Producto 2 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-bg isocop-bg"></div>
+                            <div class="product-watermark">paneltermico.com</div>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Cg%3E%3Crect x='40' y='80' width='80' height='40' fill='%23333' rx='2'/%3E%3Crect x='110' y='80' width='80' height='40' fill='%23666' rx='2'/%3E%3Crect x='180' y='80' width='80' height='40' fill='%23333' rx='2'/%3E%3C/g%3E%3Crect x='50' y='130' width='200' height='20' fill='%23f4d03f' rx='2'/%3E%3C/svg%3E" alt="ISOCOP 4">
+                        </div>
+                        <h3 class="product-name">ISOCOP 4</h3>
+                    </div>
+                    
+                    <!-- Producto 3 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-bg multytecho-bg"></div>
+                            <div class="product-watermark">paneltermico.com</div>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Cpath d='M50 150 L100 80 L150 150 L200 80 L250 150' stroke='%23b8860b' stroke-width='8' fill='none'/%3E%3Crect x='40' y='145' width='220' height='25' fill='%23deb887' rx='3'/%3E%3C/svg%3E" alt="MULTYTECHO">
+                        </div>
+                        <h3 class="product-name">MULTYTECHO</h3>
+                    </div>
+                    
+                    <!-- Producto 4 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-bg acrylit-bg"></div>
+                            <div class="product-watermark">paneltermico.com</div>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Crect x='60' y='70' width='180' height='60' fill='%23e8e8e8' rx='3'/%3E%3Crect x='70' y='80' width='160' height='40' fill='%23f5f5f5' rx='2'/%3E%3C/svg%3E" alt="ACRYLIT">
+                        </div>
+                        <h3 class="product-name">ACRYLIT</h3>
+                    </div>
+                    
+                    <!-- Producto 5 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-bg colch-bg"></div>
+                            <div class="product-watermark">paneltermico.com</div>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Crect x='50' y='80' width='200' height='40' fill='%23d3d3d3' rx='5'/%3E%3Crect x='55' y='85' width='190' height='30' fill='%23e6e6e6' rx='3'/%3E%3C/svg%3E" alt="COLCH MBI">
+                        </div>
+                        <h3 class="product-name">COLCH MBI</h3>
+                    </div>
+                    
+                    <!-- Producto 6 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-bg galvatecho-bg"></div>
+                            <div class="product-watermark">paneltermico.com</div>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Crect x='40' y='90' width='220' height='30' fill='%23c0c0c0' rx='2'/%3E%3Cpath d='M50 90 L70 70 L90 90 L110 70 L130 90 L150 70 L170 90 L190 70 L210 90 L230 70 L250 90' stroke='%23888' stroke-width='2' fill='none'/%3E%3C/svg%3E" alt="GALVATECHO">
+                        </div>
+                        <h3 class="product-name">GALVATECHO</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botón de cotización -->
+            <div class="quote-button-container">
+                <button class="quote-button">COTIZA AHORA</button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Estilos del carrusel de productos */
+        .product-carousel-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .carousel-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 60px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .carousel-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            border-radius: 2px;
+        }
+
+        /* Botones de navegación */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #333;
+        }
+
+        .nav-button:hover {
+            background: #ff6b35;
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .nav-button-left {
+            left: -30px;
+        }
+
+        .nav-button-right {
+            right: -30px;
+        }
+
+        /* Carrusel */
+        .carousel-wrapper {
+            overflow: hidden;
+            margin: 0 60px;
+        }
+
+        .product-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            gap: 30px;
+        }
+
+        /* Tarjetas de producto */
+        .product-card {
+            flex-shrink: 0;
+            width: 350px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .product-card:hover .product-image-container {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.8;
+        }
+
+        /* Fondos específicos para cada producto */
+        .fanosa-bg {
+            background: linear-gradient(135deg, #e8f5e8, #d4edda);
+        }
+
+        .isocop-bg {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        }
+
+        .multytecho-bg {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+        }
+
+        .acrylit-bg {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+        }
+
+        .colch-bg {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+        }
+
+        .galvatecho-bg {
+            background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+        }
+
+        .product-watermark {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: rgba(255, 107, 53, 0.4);
+            font-size: 12px;
+            font-weight: 600;
+            transform: rotate(15deg);
+        }
+
+        .product-image-container img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            transition: all 0.4s ease;
+        }
+
+        .product-card:hover .product-image-container img {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-name {
+            color: #ff6b35;
+        }
+
+        /* Botón de cotización */
+        .quote-button-container {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .quote-button {
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        .quote-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
+            background: linear-gradient(135deg, #ff5722, #ff6b35);
+        }
+
+        .quote-button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .carousel-wrapper {
+                margin: 0 40px;
+            }
+            
+            .nav-button-left {
+                left: -20px;
+            }
+            
+            .nav-button-right {
+                right: -20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                width: 280px;
+            }
+            
+            .carousel-wrapper {
+                margin: 0 20px;
+            }
+            
+            .nav-button {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .nav-button-left {
+                left: -10px;
+            }
+            
+            .nav-button-right {
+                right: -10px;
+            }
+            
+            .carousel-title {
+                font-size: 1.8rem;
+            }
+            
+            .product-image-container {
+                height: 240px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 250px;
+            }
+            
+            .nav-button {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .nav-button svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+
+    <script>
+        // Script del carrusel de productos
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('productTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const cards = Array.from(track.children);
+            
+            let currentIndex = 0;
+            let isAnimating = false;
+            let autoPlayInterval;
+            let isPaused = false;
+
+            // Configuración responsiva
+            function getCardWidth() {
+                if (window.innerWidth <= 480) return 250;
+                if (window.innerWidth <= 768) return 280;
+                return 350;
+            }
+
+            function getVisibleCards() {
+                const containerWidth = document.querySelector('.carousel-wrapper').offsetWidth;
+                const cardWidth = getCardWidth() + 30; // incluye gap
+                return Math.floor(containerWidth / cardWidth);
+            }
+
+            // Clonar tarjetas para efecto infinito
+            function setupInfiniteLoop() {
+                const visibleCards = getVisibleCards();
+                const clonesToAdd = visibleCards + 2;
+                
+                // Limpiar clones existentes
+                track.querySelectorAll('.cloned').forEach(clone => clone.remove());
+                
+                // Clonar al final
+                for (let i = 0; i < clonesToAdd; i++) {
+                    const clone = cards[i % cards.length].cloneNode(true);
+                    clone.classList.add('cloned');
+                    track.appendChild(clone);
+                }
+                
+                // Clonar al inicio
+                for (let i = clonesToAdd - 1; i >= 0; i--) {
+                    const clone = cards[(cards.length - 1 - i) % cards.length].cloneNode(true);
+                    clone.classList.add('cloned');
+                    track.insertBefore(clone, track.firstChild);
+                }
+                
+                // Posicionar en el primer producto real
+                currentIndex = clonesToAdd;
+                updateTrackPosition(false);
+            }
+
+            // Actualizar posición del track
+            function updateTrackPosition(smooth = true) {
+                const cardWidth = getCardWidth() + 30;
+                const translateX = -(currentIndex * cardWidth);
+                
+                track.style.transition = smooth ? 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
+                track.style.transform = `translateX(${translateX}px)`;
+            }
+
+            // Ir al siguiente producto
+            function goToNext() {
+                if (isAnimating) return;
+                isAnimating = true;
+                
+                currentIndex++;
+                updateTrackPosition();
+                
+                setTimeout(() => {
+                    const totalClones = getVisibleCards() + 2;
+                    if (currentIndex >= cards.length + totalClones) {
+                        currentIndex = totalClones;
+                        updateTrackPosition(false);
+                    }
+                    isAnimating = false;
+                }, 600);
+            }
+
+            // Ir al producto anterior
+            function goToPrev() {
+                if (isAnimating) return;
+                isAnimating = true;
+                
+                currentIndex--;
+                updateTrackPosition();
+                
+                setTimeout(() => {
+                    const totalClones = getVisibleCards() + 2;
+                    if (currentIndex < totalClones) {
+                        currentIndex = cards.length + totalClones - 1;
+                        updateTrackPosition(false);
+                    }
+                    isAnimating = false;
+                }, 600);
+            }
+
+            // Auto-play
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(() => {
+                    if (!isPaused) {
+                        goToNext();
+                    }
+                }, 4000);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                goToNext();
+                stopAutoPlay();
+                setTimeout(startAutoPlay, 10000);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                goToPrev();
+                stopAutoPlay();
+                setTimeout(startAutoPlay, 10000);
+            });
+
+            // Pausar en hover
+            track.addEventListener('mouseenter', () => isPaused = true);
+            track.addEventListener('mouseleave', () => isPaused = false);
+            
+            [prevBtn, nextBtn].forEach(btn => {
+                btn.addEventListener('mouseenter', () => isPaused = true);
+                btn.addEventListener('mouseleave', () => isPaused = false);
+            });
+
+            // Botón de cotización
+            document.querySelector('.quote-button').addEventListener('click', () => {
+                window.open('https://wa.me/523311234567?text=Hola,%20me%20interesa%20cotizar%20sus%20productos', '_blank');
+            });
+
+            // Inicialización y manejo de resize
+            function init() {
+                setupInfiniteLoop();
+                startAutoPlay();
+            }
+
+            window.addEventListener('resize', () => {
+                stopAutoPlay();
+                setTimeout(() => {
+                    setupInfiniteLoop();
+                    startAutoPlay();
+                }, 300);
+            });
+
+            init();
+        });
+    </script>
+</body>
+</html>

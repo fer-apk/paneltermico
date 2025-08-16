@@ -886,7 +886,19 @@
             init();
         });
     </script>
-     <!-- REVIEWS -->
+     
+     
+     
+     
+     
+     
+
+
+
+
+<!-- REVIEWS -->
+  </section>
+
   <section class="reviews" style="padding: 3rem 0; background:#2B4562; color: white; overflow: hidden;">
     <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
       <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; position: relative; display: block;">
@@ -948,6 +960,9 @@
       </div>
     </div>
   </section>
+
+
+
   <!-- Carrusel de proveedores -->
 <section class="marcas-carousel" style="background-color: #f9f9f9; padding: 1.5rem 0; margin: 0; overflow: hidden;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
@@ -1126,13 +1141,13 @@
         width: 100%;
         height: 100%;
         opacity: 0;
-        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translateX(30px);
+        transition: opacity 0.8s ease-in-out;
+        pointer-events: none;
     }
 
     .carousel-slide.active {
         opacity: 1;
-        transform: translateX(0);
+        pointer-events: auto;
     }
 
     .carousel-slide img {
@@ -1405,13 +1420,24 @@
 
         // Función para mostrar slide específico
         function showSlide(index) {
+            // Asegurarse de que el índice esté dentro de los límites
+            if (index >= slides.length) {
+                index = 0;
+            } else if (index < 0) {
+                index = slides.length - 1;
+            }
+            
             // Remover clase active de todos los slides e indicadores
-            slides.forEach(slide => slide.classList.remove('active'));
+            slides.forEach(slide => slide.style.opacity = '0');
             indicators.forEach(indicator => indicator.classList.remove('active'));
 
-            // Agregar clase active al slide e indicador actual
-            slides[index].classList.add('active');
-            indicators[index].classList.add('active');
+            // Agregar clase active al slide e indicador actual con transición
+            setTimeout(() => {
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[index].classList.add('active');
+                slides[index].style.opacity = '1';
+                indicators[index].classList.add('active');
+            }, 50);
 
             currentSlide = index;
         }
@@ -1424,11 +1450,26 @@
 
         // Auto-play del carrusel
         function startSlideshow() {
+            // Detener cualquier intervalo existente
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+            // Iniciar el intervalo
             slideInterval = setInterval(nextSlide, 4000);
         }
 
         function stopSlideshow() {
-            clearInterval(slideInterval);
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+        }
+
+        // Inicializar mostrando el primer slide
+        function initCarousel() {
+            // Mostrar el primer slide inmediatamente
+            showSlide(0);
+            // Iniciar el carrusel
+            startSlideshow();
         }
 
         // Event listeners para indicadores
@@ -1436,38 +1477,668 @@
             indicator.addEventListener('click', () => {
                 showSlide(index);
                 stopSlideshow();
-                setTimeout(startSlideshow, 8000); // Reanudar después de 8 segundos
+                startSlideshow();
             });
         });
 
         // Pausar slideshow en hover
         const carousel = document.querySelector('.image-carousel');
-        carousel.addEventListener('mouseenter', stopSlideshow);
-        carousel.addEventListener('mouseleave', startSlideshow);
+        if (carousel) {
+            carousel.addEventListener('mouseenter', stopSlideshow);
+            carousel.addEventListener('mouseleave', startSlideshow);
+        }
 
         // Botón CTA
-        document.querySelector('.cta-button').addEventListener('click', () => {
-            window.open('https://wa.me/523311234567?text=Hola,%20me%20interesa%20solicitar%20una%20cotización%20hoy%20mismo', '_blank');
-        });
+        const ctaButton = document.querySelector('.cta-button');
+        if (ctaButton) {
+            ctaButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.open('https://wa.me/523311234567?text=Hola,%20me%20interesa%20solicitar%20una%20cotización%20hoy%20mismo', '_blank');
+            });
+        }
 
-        // Iniciar slideshow
-        startSlideshow();
+        // Inicializar el carrusel
+        initCarousel();
     });
 </script>
 
+<!-- Sección de dudas y información -->
+<section class="dudas-section">
+    <div class="carousel-container">
+        <div class="carousel-header">
+            <h2>¿Tienes dudas?</h2>
+            <p>Aquí te dejamos más información</p>
+        </div>
 
+        <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Slide 1: Multytecho -->
+                <div class="carousel-slide slide-1">
+                    <div class="slide-content">
+                        <h3 class="slide-title">MULTYTECHO</h3>
+                        <p class="slide-description">
+                            Utilizado principalmente en cámaras de refrigeración, casetas o campers, como cubierta en edificios o restaurantes y tiendas de autoservicio, entre otros.
+                        </p>
+                    </div>
+                    <div class="panel-visual">
+                        <div class="panel-3d">
+                            <div class="multytecho-panel"></div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Slide 2: ISOCOP -->
+                <div class="carousel-slide slide-2">
+                    <div class="slide-content">
+                        <h3 class="slide-title">ISOCOP 4</h3>
+                        <p class="slide-description">
+                            Es adecuado para ser utilizado en construcción industrial, zootécnica y residencial.
+                        </p>
+                    </div>
+                    <div class="panel-visual">
+                        <div class="panel-3d">
+                            <div class="isocop-panel"></div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Slide 3: Galvatecho -->
+                <div class="carousel-slide slide-3">
+                    <div class="slide-content">
+                        <h3 class="slide-title">GALVATECHO</h3>
+                        <p class="slide-description">
+                            Es ideal para almacenes de alimentos, centros comerciales, oficinas móviles y aulas.
+                        </p>
+                    </div>
+                    <div class="panel-visual">
+                        <div class="panel-3d">
+                            <div class="galvatecho-panel"></div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Slide 4: Economuro -->
+                <div class="carousel-slide slide-4">
+                    <div class="slide-content">
+                        <h3 class="slide-title">ECONOMURO</h3>
+                        <p class="slide-description">
+                            Utilizado en muros, fachadas o plafones de construcciones que requieran buena capacidad de aislamiento térmico y estructural.
+                        </p>
+                    </div>
+                    <div class="panel-visual">
+                        <div class="panel-3d">
+                            <div class="economuro-panel"></div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Slide 5: Econotecho -->
+                <div class="carousel-slide slide-5">
+                    <div class="slide-content">
+                        <h3 class="slide-title">ECONOTECHO</h3>
+                        <p class="slide-description">
+                            Es ideal para cumplir con altos requerimientos térmicos, acústicos, estructurales y de desagüe, su manejo e instalación es fácil y rápido.
+                        </p>
+                        <a href="#" class="contact-button">CONTACTAR UN ASESOR</a>
+                    </div>
+                    <div class="panel-visual">
+                        <div class="panel-3d">
+                            <div class="econotecho-panel"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <button class="carousel-arrows prev" onclick="prevSlide()">‹</button>
+            <button class="carousel-arrows next" onclick="nextSlide()">›</button>
+        </div>
 
+        <div class="carousel-nav">
+            <span class="nav-dot active" onclick="goToSlide(0)"></span>
+            <span class="nav-dot" onclick="goToSlide(1)"></span>
+            <span class="nav-dot" onclick="goToSlide(2)"></span>
+            <span class="nav-dot" onclick="goToSlide(3)"></span>
+            <span class="nav-dot" onclick="goToSlide(4)"></span>
+        </div>
 
+        <div class="main-contact-section">
+            <a href="#" class="main-contact-button" onclick="contactWhatsApp()">
+                CONTACTAR UN ASESOR
+            </a>
+        </div>
+    </div>
+</section>
 
+<style>
+    /* Estilos para la sección de dudas */
+    .dudas-section {
+        background: #f8f9fa;
+        padding: 80px 0;
+        position: relative;
+    }
 
+    .dudas-section .carousel-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        background: white;
+        border-radius: 20px;
+        padding: 40px 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
 
+    .dudas-section .carousel-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
 
+    .dudas-section .carousel-header h2 {
+        font-size: 2.5rem;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
 
+    .dudas-section .carousel-header p {
+        font-size: 1.2rem;
+        color: #666;
+        font-style: italic;
+    }
+
+    .dudas-section .carousel-wrapper {
+        position: relative;
+        border-radius: 15px;
+        /* Removido overflow: hidden para asegurar visibilidad */
+    }
+
+    .dudas-section .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 500%;
+        /* Asegurar que todos los slides sean visibles */
+        min-height: 500px;
+    }
+
+    .dudas-section .carousel-slide {
+        width: 20%;
+        min-height: 500px;
+        background: linear-gradient(135deg, #FF4500, #FF6B35);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px;
+        position: relative;
+        /* Removido overflow: hidden para mostrar todo el contenido */
+        border-radius: 15px;
+        margin: 0 5px;
+    }
+
+    .dudas-section .slide-content {
+        width: 45%;
+        color: white;
+        z-index: 2;
+        /* Asegurar que el contenido sea siempre visible */
+        position: relative;
+        padding: 20px;
+        background: rgba(0,0,0,0.1);
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+    }
+
+    .dudas-section .slide-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        /* Asegurar visibilidad del título */
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .dudas-section .slide-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        /* Asegurar visibilidad de la descripción */
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .dudas-section .panel-visual {
+        width: 45%;
+        height: 300px;
+        position: relative;
+        z-index: 2;
+        /* Asegurar que el panel visual sea visible */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dudas-section .panel-3d {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotateX(-10deg) rotateY(15deg); }
+        50% { transform: translateY(-10px) rotateX(-10deg) rotateY(15deg); }
+    }
+
+    /* Paneles específicos con mejor visibilidad */
+    .dudas-section .multytecho-panel {
+        width: 100%;
+        height: 60px;
+        background: linear-gradient(45deg, #e0e0e0, #f5f5f5);
+        border-radius: 0 0 20px 20px;
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .dudas-section .multytecho-panel::before {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: 0;
+        right: 0;
+        height: 15px;
+        background: repeating-linear-gradient(
+            90deg,
+            #d0d0d0 0px,
+            #d0d0d0 8px,
+            #c0c0c0 8px,
+            #c0c0c0 16px
+        );
+        border-radius: 8px 8px 0 0;
+    }
+
+    .dudas-section .isocop-panel {
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(45deg, #2c3e50, #34495e);
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .dudas-section .isocop-panel::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        height: 60px;
+        background: repeating-linear-gradient(
+            0deg,
+            #ecf0f1 0px,
+            #ecf0f1 4px,
+            #bdc3c7 4px,
+            #bdc3c7 8px
+        );
+        border-radius: 5px;
+    }
+
+    .dudas-section .galvatecho-panel {
+        width: 100%;
+        height: 70px;
+        background: linear-gradient(45deg, #95a5a6, #bdc3c7);
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        border-radius: 5px;
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .dudas-section .galvatecho-panel::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            transparent 15px,
+            rgba(255,255,255,0.3) 15px,
+            rgba(255,255,255,0.3) 17px
+        );
+    }
+
+    .dudas-section .economuro-panel {
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(45deg, #8e44ad, #9b59b6);
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .dudas-section .economuro-panel::before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        background: linear-gradient(45deg, #f39c12, #e67e22);
+        border-radius: 5px;
+    }
+
+    .dudas-section .econotecho-panel {
+        width: 100%;
+        height: 75px;
+        background: linear-gradient(45deg, #27ae60, #2ecc71);
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        border-radius: 15px;
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .dudas-section .econotecho-panel::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        background: repeating-linear-gradient(
+            45deg,
+            #ecf0f1 0px,
+            #ecf0f1 10px,
+            #d5dbdb 10px,
+            #d5dbdb 20px
+        );
+        border-radius: 10px;
+    }
+
+    .dudas-section .carousel-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 10px;
+    }
+
+    .dudas-section .nav-dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #ddd;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .dudas-section .nav-dot.active {
+        background: #FF4500;
+        transform: scale(1.2);
+    }
+
+    .dudas-section .carousel-arrows {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #FF4500;
+        transition: all 0.3s ease;
+        z-index: 3;
+    }
+
+    .dudas-section .carousel-arrows:hover {
+        background: white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .dudas-section .prev {
+        left: 20px;
+    }
+
+    .dudas-section .next {
+        right: 20px;
+    }
+
+    .dudas-section .contact-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background: white;
+        color: #FF4500;
+        text-decoration: none;
+        border: 3px solid white;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+    }
+
+    .dudas-section .contact-button:hover {
+        background: transparent;
+        color: white;
+    }
+
+    .dudas-section .main-contact-section {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 2px solid #f0f0f0;
+    }
+
+    .dudas-section .main-contact-button {
+        display: inline-block;
+        padding: 18px 50px;
+        background: #000;
+        color: white;
+        text-decoration: none;
+        border: 3px solid #000;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .dudas-section .main-contact-button:hover {
+        background: transparent;
+        color: #000;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Fondos específicos para cada slide */
+    .dudas-section .slide-1 { background: linear-gradient(135deg, #FF4500, #FF6B35); }
+    .dudas-section .slide-2 { background: linear-gradient(135deg, #3498db, #2980b9); }
+    .dudas-section .slide-3 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+    .dudas-section .slide-4 { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+    .dudas-section .slide-5 { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .dudas-section .carousel-slide {
+            flex-direction: column;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .dudas-section .slide-content {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .dudas-section .panel-visual {
+            width: 100%;
+            height: 200px;
+        }
+
+        .dudas-section .slide-title {
+            font-size: 2rem;
+        }
+
+        .dudas-section .slide-description {
+            font-size: 1rem;
+        }
+
+        .dudas-section .carousel-arrows {
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .dudas-section .carousel-container {
+            padding: 20px 15px;
+        }
+
+        .dudas-section .carousel-header h2 {
+            font-size: 2rem;
+        }
+
+        .dudas-section .carousel-header p {
+            font-size: 1rem;
+        }
+
+        .dudas-section .slide-title {
+            font-size: 1.5rem;
+        }
+
+        .dudas-section .slide-description {
+            font-size: 0.9rem;
+        }
+
+        .dudas-section .contact-button {
+            padding: 12px 25px;
+            font-size: 1rem;
+        }
+
+        .dudas-section .main-contact-button {
+            padding: 15px 30px;
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<script>
+    // Script mejorado para el carrusel de dudas
+    document.addEventListener('DOMContentLoaded', function() {
+        let currentSlide = 0;
+        const totalSlides = 5;
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('.nav-dot');
+
+        function updateCarousel() {
+            const translateX = -currentSlide * 20;
+            track.style.transform = `translateX(${translateX}%)`;
+            
+            // Actualizar indicadores
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+
+            // Asegurar que el contenido sea visible
+            const slides = document.querySelectorAll('.carousel-slide');
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.style.opacity = '1';
+                    slide.style.visibility = 'visible';
+                } else {
+                    slide.style.opacity = '0.8';
+                    slide.style.visibility = 'visible';
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        // Auto-play carousel con pausa en hover
+        let autoPlayInterval = setInterval(nextSlide, 5000);
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+
+        if (carouselWrapper) {
+            carouselWrapper.addEventListener('mouseenter', () => {
+                clearInterval(autoPlayInterval);
+            });
+
+            carouselWrapper.addEventListener('mouseleave', () => {
+                autoPlayInterval = setInterval(nextSlide, 5000);
+            });
+        }
+
+        // Touch/swipe support
+        let startX = 0;
+        let endX = 0;
+
+        if (track) {
+            track.addEventListener('touchstart', e => {
+                startX = e.touches[0].clientX;
+            });
+
+            track.addEventListener('touchend', e => {
+                endX = e.changedTouches[0].clientX;
+                handleSwipe();
+            });
+        }
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // WhatsApp contact function
+        function contactWhatsApp() {
+            const phoneNumber = '5212345678900';
+            const message = encodeURIComponent('Hola! Me interesa obtener más información sobre sus paneles de construcción. ¿Podrían ayudarme con una cotización?');
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Hacer la función global
+        window.contactWhatsApp = contactWhatsApp;
+        window.prevSlide = prevSlide;
+        window.nextSlide = nextSlide;
+        window.goToSlide = goToSlide;
+
+        // Inicializar el carrusel
+        updateCarousel();
+    });
+</script>
 
 <!-- SUCURSALES -->
 <section class="sucursales">
@@ -1852,6 +2523,8 @@
     });
   });
   </script>
+
+
 
   <!-- Footer -->
   <footer style="background-color: #2D4766; color: white; padding: 1.5rem 0; text-align: center; margin-top: 3rem;">

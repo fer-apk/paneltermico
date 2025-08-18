@@ -30,7 +30,7 @@
 
         .sliding-text {
             color: white;
-            font-size: 18px;
+            font-size: 28px;
             font-weight: bold;
             white-space: nowrap;
             animation: slideRight 8s linear infinite;
@@ -329,12 +329,7 @@
         // Iniciar animación del contador después de un delay
         setTimeout(animateCounter, 1500);
 
-        // Efecto de paralax suave en el scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const header = document.querySelector('.header-container');
-            header.style.transform = `translateY(${scrolled * 0.5}px)`;
-        });
+        // Se ha eliminado el efecto de paralax del encabezado
 
         // Animación adicional para los botones
         document.querySelectorAll('.contact-btn').forEach(btn => {
@@ -740,6 +735,136 @@
             .product-image-container {
                 height: 240px;
             }
+            
+            .header-container {
+                height: 100vh; /* Usar altura completa de la pantalla */
+                padding: 15px 10px;
+                justify-content: flex-start;
+                padding-top: 100px; /* Espacio para el navbar */
+            }
+            
+            .nav-bar {
+                padding: 0 15px;
+                height: 80px;
+                position: fixed;
+                top: 0;
+                background: rgba(0,0,0,0.7);
+                backdrop-filter: blur(5px);
+            }
+            
+            .sliding-text {
+                font-size: 18px;
+                white-space: normal;
+                text-align: center;
+                width: 100%;
+                padding: 0 10px;
+                animation: slideRight 12s linear infinite;
+                position: relative;
+                margin-top: 20px;
+            }
+            
+            .main-content {
+                margin-top: 40px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem !important;
+                margin: 20px 0 !important;
+            }
+            
+            .floating-buttons {
+                display: none;
+            }
+        }
+        
+        /* Floating buttons - hidden by default, only shown on mobile */
+        .floating-buttons {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .floating-buttons {
+                position: fixed;
+                bottom: 20px;
+                left: 15px;
+                right: 15px;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                z-index: 1000;
+                padding: 0 15px;
+                box-sizing: border-box;
+                flex-wrap: nowrap;
+                bottom: 25px;
+                gap: 12px;
+            }
+            
+            .floating-button {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 14px 10px;
+                border: none;
+                border-radius: 30px;
+                font-size: 15px;
+                font-weight: 600;
+                color: white;
+                text-decoration: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                max-width: 180px;
+            }
+            
+            .floating-button i {
+                margin-right: 8px;
+                font-size: 18px;
+            }
+            
+            .floating-button.whatsapp {
+                background: linear-gradient(135deg, #25D366, #128C7E);
+            }
+            
+            .floating-button.call {
+                background: linear-gradient(135deg, #34B7F1, #128C7E);
+            }
+            
+            .floating-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            }
+            
+            .floating-button:active {
+                transform: translateY(1px);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* Mobile styles for floating buttons */
+        @media (max-width: 768px) {
+            
+            .floating-button {
+                padding: 14px 8px;
+                font-size: 14px;
+                border-radius: 25px;
+                max-width: none;
+            }
+            
+            .floating-button i {
+                margin-right: 6px;
+                font-size: 16px;
+            }
+            
+            .nav-button {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .nav-button svg {
+                width: 20px;
+                height: 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -774,7 +899,7 @@
 
             // Configuración responsiva
             function getCardWidth() {
-                if (window.innerWidth <= 480) return 250;
+                if (window.innerWidth <= 480) return window.innerWidth * 0.8; // 80% del ancho de la pantalla
                 if (window.innerWidth <= 768) return 280;
                 return 350;
             }
@@ -788,15 +913,18 @@
             // Clonar tarjetas para efecto infinito
             function setupInfiniteLoop() {
                 const visibleCards = getVisibleCards();
-                const clonesToAdd = visibleCards + 2;
+                const clonesToAdd = Math.max(2, visibleCards + 2); // Mínimo 2 clones
                 
                 // Limpiar clones existentes
                 track.querySelectorAll('.cloned').forEach(clone => clone.remove());
+                
+                const cardGap = window.innerWidth <= 480 ? 15 : 30;
                 
                 // Clonar al final
                 for (let i = 0; i < clonesToAdd; i++) {
                     const clone = cards[i % cards.length].cloneNode(true);
                     clone.classList.add('cloned');
+                    clone.style.marginRight = `${cardGap}px`;
                     track.appendChild(clone);
                 }
                 
@@ -804,26 +932,37 @@
                 for (let i = clonesToAdd - 1; i >= 0; i--) {
                     const clone = cards[(cards.length - 1 - i + cards.length) % cards.length].cloneNode(true);
                     clone.classList.add('cloned');
+                    clone.style.marginRight = `${cardGap}px`;
                     track.insertBefore(clone, track.firstChild);
                 }
+                
+                // Ajustar el ancho del track para que quepan todos los productos
+                const cardWidth = getCardWidth();
+                const totalCards = cards.length + (clonesToAdd * 2);
+                track.style.width = `${(cardWidth + cardGap) * totalCards}px`;
                 
                 // Posicionar en el primer producto real
                 currentIndex = clonesToAdd;
                 updateTrackPosition(false);
                 
-                // Ajustar el ancho del track para que quepan todos los productos
-                const cardWidth = getCardWidth() + 30;
-                const totalCards = cards.length + (clonesToAdd * 2);
-                track.style.width = `${totalCards * cardWidth}px`;
+                // Asegurar que las tarjetas tengan el ancho correcto
+                document.querySelectorAll('.product-card').forEach(card => {
+                    card.style.width = `${cardWidth}px`;
+                    card.style.flexShrink = '0';
+                });
             }
 
             // Actualizar posición del track
             function updateTrackPosition(smooth = true) {
-                const cardWidth = getCardWidth() + 30;
-                const translateX = -(currentIndex * cardWidth);
+                const cardWidth = getCardWidth();
+                const cardGap = window.innerWidth <= 480 ? 15 : 30;
+                const translateX = -((cardWidth + cardGap) * currentIndex);
                 
                 track.style.transition = smooth ? 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
                 track.style.transform = `translateX(${translateX}px)`;
+                
+                // Forzar repintado para asegurar que la transición se aplique
+                void track.offsetWidth;
             }
 
             // Ir al siguiente producto
@@ -904,16 +1043,32 @@
 
             // Inicialización y manejo de resize
             function init() {
+                // Forzar recálculo en móviles
+                if (window.innerWidth <= 480) {
+                    document.documentElement.style.setProperty('--card-gap', '15px');
+                }
                 setupInfiniteLoop();
                 startAutoPlay();
+                
+                // Asegurar que se muestre correctamente después de cargar todo
+                setTimeout(() => {
+                    updateTrackPosition(false);
+                }, 100);
             }
 
+            let resizeTimer;
             window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
                 stopAutoPlay();
-                setTimeout(() => {
+                resizeTimer = setTimeout(() => {
+                    if (window.innerWidth <= 480) {
+                        document.documentElement.style.setProperty('--card-gap', '15px');
+                    } else {
+                        document.documentElement.style.setProperty('--card-gap', '30px');
+                    }
                     setupInfiniteLoop();
                     startAutoPlay();
-                }, 300);
+                }, 250);
             });
 
             init();
@@ -937,7 +1092,7 @@
      
     
      <!-- RESEÑAS -->
-<section style="overflow: hidden; margin-bottom: 80px;">
+<section style="overflow: hidden; margin-bottom: 80px; background-color: #001F3F; padding: 40px 0;">
     <div class="carousel-container">
       <h1>Lo que nuestros clientes dicen</h1>
       <div class="carousel-wrapper">
@@ -1404,18 +1559,18 @@
     h1 {
         font-size: 50px;
         font-weight: 400;
-        color: #333;
+        color: #FFFFFF; /* Changed to white for better contrast */
         margin-bottom: 30px;
         text-align: center;
         margin-top: 50px;
         font-family: 'Poppins', sans-serif;
         font-weight: 700;
         font-size: 2rem;
-        color: #333;
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         letter-spacing: 1px;
         text-transform: uppercase;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Added subtle text shadow for better readability */
     }
 
     .carousel-wrapper {
@@ -1456,11 +1611,12 @@
         max-width: 280px;
         background: white;
         border-radius: 12px;
-        padding: 20px;
+        padding: 25px 20px;
         border: 1px solid #e8eaed;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         flex-shrink: 0;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin: 10px 0;
     }
 
     .review-card:hover {
@@ -2326,6 +2482,16 @@
                 CONTACTAR UN ASESOR
             </a>
         </div>
+        <div class="floating-buttons">
+            <a href="https://wa.me/523311234567?text=Hola,%20me%20interesa%20solicitar%20una%20cotización%20hoy%20mismo" class="floating-button whatsapp">
+                <i class="fa fa-whatsapp"></i>
+                WhatsApp
+            </a>
+            <a href="tel:+523311234567" class="floating-button call">
+                <i class="fa fa-phone"></i>
+                Llamar
+            </a>
+        </div>
     </div>
 </section>
 
@@ -2333,12 +2499,14 @@
     /* Estilos para la sección de dudas */
     #dudas-section {
         background: #f8f9fa;
-        padding: 80px 0;
+        padding: 40px 0 100px; /* Aumentamos el padding inferior para los botones */
         position: relative;
+        width: 100%;
+        overflow: hidden; /* Prevenir desbordamiento */
     }
 
     #dudas-section .dudas-carousel-container {
-        max-width: 1200px;
+        max-width: 100%;
         margin: 0 auto;
         position: relative;
         background: white;
@@ -2507,9 +2675,11 @@
 
     #dudas-section .dudas-main-contact-section {
         text-align: center;
-        margin-top: 40px;
-        padding-top: 30px;
+        margin: 40px 15px 0;
+        padding: 30px 15px 100px; /* Aseguramos espacio para los botones flotantes */
         border-top: 2px solid #f0f0f0;
+        position: relative;
+        z-index: 2;
     }
 
     #dudas-section .dudas-main-contact-button {
@@ -2525,6 +2695,7 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         transition: all 0.3s ease;
+        margin-bottom: 80px; /* Espacio para los botones flotantes */
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
@@ -3102,17 +3273,7 @@
     </div>
   </footer>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <div class="lightbox-nav">
-      <div class="lightbox-prev">&#10094;</div>
-      <div class="lightbox-next">&#10095;</div>
-    </div>
-    <div class="lightbox-content">
-      <img src="" alt="Proyecto" id="lightbox-img">
-    </div>
-  </div>
+
 
 </body>
 </html>

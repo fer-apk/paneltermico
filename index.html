@@ -1128,7 +1128,7 @@
     <div class="carousel-container">
       <h1>Lo que nuestros clientes dicen</h1>
       <div class="carousel-wrapper">
-        <button class="carousel-nav prev" onclick="pauseAndResume()">
+        <button class="carousel-nav prev" onclick="pauseAndResume()" aria-label="Diapositiva anterior">
           <svg viewBox="0 0 24 24">
             <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
           </svg>
@@ -1957,9 +1957,9 @@
                 
                 <!-- Indicadores del carrusel -->
                 <div class="carousel-indicators">
-                    <button class="indicator active" data-slide="0"></button>
-                    <button class="indicator" data-slide="1"></button>
-                    <button class="indicator" data-slide="2"></button>
+                    <button class="indicator active" data-slide="0" aria-label="Mostrar imagen 1" aria-current="true"></button>
+                    <button class="indicator" data-slide="1" aria-label="Mostrar imagen 2"></button>
+                    <button class="indicator" data-slide="2" aria-label="Mostrar imagen 3"></button>
                 </div>
             </div>
         </div>
@@ -1969,7 +1969,7 @@
             <div class="trust-header">
                 <h2 class="trust-title">
                     <span class="highlight-number">+500</span> 
-                    <span class="title-text">clientes satisfechos en<br>Jalisco y alrededores</span>
+                    <span class="highlight-number" style="color: #e65100;">+500 clientes satisfechos en<br>Jalisco y alrededores</span>
                 </h2>
                 <button class="cta-button">
                     SOLICITA TU<br>COTIZACIÓN HOY

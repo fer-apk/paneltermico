@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Térmico - Header</title>
+    <title>Panel Térmico -Tu Mejor Opcion en Aislantes y Paneles Térmicos</title>
     <style>
         * {
             margin: 0;
@@ -25,6 +25,7 @@
             align-items: center;
             overflow: hidden;
             position: relative;
+            animation-timing-function: ease-in-out;
         }
 
         .sliding-text {
@@ -32,7 +33,7 @@
             font-size: 18px;
             font-weight: bold;
             white-space: nowrap;
-            animation: slideRight 15s linear infinite;
+            animation: slideRight 8s linear infinite;
             position: absolute;
         }
 
@@ -48,15 +49,16 @@
         /* Header principal */
         .header-container {
             position: relative;
-            height: 100vh;
+            height: 500px;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="ceiling" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><rect width="100" height="100" fill="%23f5f5f5"/><rect x="2" y="2" width="96" height="96" fill="%23ffffff" stroke="%23ddd" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23ceiling)"/><g transform="perspective(800px) rotateX(45deg) translate(0,200)"><rect x="0" y="0" width="1200" height="20" fill="%23e0e0e0"/><rect x="0" y="40" width="1200" height="20" fill="%23d5d5d5"/><rect x="0" y="80" width="1200" height="20" fill="%23cacaca"/></g></svg>') center/cover;
+                        url('images/header/fondoheader.webp') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: white;
+            padding: 20px 0;
         }
 
         /* Navegación superior */
@@ -359,9 +361,24 @@
             textIndex = (textIndex + 1) % texts.length;
         }
 
-        // Cambiar texto cada 15 segundos (sincronizado con la animación)
-        setInterval(changeText, 15000);
+        // Cambiar texto cada 8 segundos (sincronizado con la animación)
+        setInterval(changeText, 8000);
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Carrusel de productos - Segunda sección -->
     <section class="product-carousel-section">
@@ -388,8 +405,7 @@
                     <div class="product-card">
                         <div class="product-image-container">
                             <div class="product-bg fanosa-bg"></div>
-                            <div class="product-watermark">paneltermico.com</div>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Crect x='50' y='50' width='200' height='100' fill='%23e0e0e0' rx='5'/%3E%3Crect x='60' y='60' width='180' height='80' fill='%23d0d0d0' rx='3'/%3E%3C/svg%3E" alt="FANOSA INSUPANEL">
+                            <img src="images/2daParteProductos/Fanosa_Insulpanel_muro.webp" alt="FANOSA INSUPANEL">
                         </div>
                         <h3 class="product-name">FANOSA INSUPANEL</h3>
                     </div>
@@ -398,8 +414,7 @@
                     <div class="product-card">
                         <div class="product-image-container">
                             <div class="product-bg isocop-bg"></div>
-                            <div class="product-watermark">paneltermico.com</div>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Cg%3E%3Crect x='40' y='80' width='80' height='40' fill='%23333' rx='2'/%3E%3Crect x='110' y='80' width='80' height='40' fill='%23666' rx='2'/%3E%3Crect x='180' y='80' width='80' height='40' fill='%23333' rx='2'/%3E%3C/g%3E%3Crect x='50' y='130' width='200' height='20' fill='%23f4d03f' rx='2'/%3E%3C/svg%3E" alt="ISOCOP 4">
+                            <img src="images/2daParteProductos/Isocindu_Isocop_4.webp" alt="ISOCOP 4">
                         </div>
                         <h3 class="product-name">ISOCOP 4</h3>
                     </div>
@@ -408,8 +423,7 @@
                     <div class="product-card">
                         <div class="product-image-container">
                             <div class="product-bg multytecho-bg"></div>
-                            <div class="product-watermark">paneltermico.com</div>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Cpath d='M50 150 L100 80 L150 150 L200 80 L250 150' stroke='%23b8860b' stroke-width='8' fill='none'/%3E%3Crect x='40' y='145' width='220' height='25' fill='%23deb887' rx='3'/%3E%3C/svg%3E" alt="MULTYTECHO">
+                            <img src="images/2daParteProductos/Ternium_Multytecho.webp" alt="MULTYTECHO">
                         </div>
                         <h3 class="product-name">MULTYTECHO</h3>
                     </div>
@@ -418,34 +432,40 @@
                     <div class="product-card">
                         <div class="product-image-container">
                             <div class="product-bg acrylit-bg"></div>
-                            <div class="product-watermark">paneltermico.com</div>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Crect x='60' y='70' width='180' height='60' fill='%23e8e8e8' rx='3'/%3E%3Crect x='70' y='80' width='160' height='40' fill='%23f5f5f5' rx='2'/%3E%3C/svg%3E" alt="ACRYLIT">
+                            <img src="images/2daParteProductos/Kingspan_Kingcrown.webp" alt="ACRYLIT">
                         </div>
-                        <h3 class="product-name">ACRYLIT</h3>
+                        <h3 class="product-name">KINCROWN</h3>
                     </div>
                     
                     <!-- Producto 5 -->
                     <div class="product-card">
                         <div class="product-image-container">
                             <div class="product-bg colch-bg"></div>
-                            <div class="product-watermark">paneltermico.com</div>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Crect x='50' y='80' width='200' height='40' fill='%23d3d3d3' rx='5'/%3E%3Crect x='55' y='85' width='190' height='30' fill='%23e6e6e6' rx='3'/%3E%3C/svg%3E" alt="COLCH MBI">
+                            <img src="images/2daParteProductos/Ternium_Econotecho.webp" alt="COLCH MBI">
                         </div>
-                        <h3 class="product-name">COLCH MBI</h3>
+                        <h3 class="product-name">ECONOTECHO</h3>
                     </div>
                     
                     <!-- Producto 6 -->
                     <div class="product-card">
                         <div class="product-image-container">
                             <div class="product-bg galvatecho-bg"></div>
-                            <div class="product-watermark">paneltermico.com</div>
-                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Crect x='40' y='90' width='220' height='30' fill='%23c0c0c0' rx='2'/%3E%3Cpath d='M50 90 L70 70 L90 90 L110 70 L130 90 L150 70 L170 90 L190 70 L210 90 L230 70 L250 90' stroke='%23888' stroke-width='2' fill='none'/%3E%3C/svg%3E" alt="GALVATECHO">
+                            <img src="images/2daParteProductos/Ternium_Galvatecho.webp" alt="GALVATECHO">
                         </div>
                         <h3 class="product-name">GALVATECHO</h3>
                     </div>
+                    
+                    <!-- Producto 7 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <div class="product-bg economuro-bg"></div>
+                            <img src="images/2daParteProductos/Ternium_Economuro.webp" alt="ECONOMURO">
+                        </div>
+                        <h3 class="product-name">ECONOMURO</h3>
+                    </div>
                 </div>
             </div>
-            
+
             <!-- Botón de cotización -->
             <div class="quote-button-container">
                 <button class="quote-button">COTIZA AHORA</button>
@@ -536,6 +556,9 @@
             display: flex;
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             gap: 30px;
+            width: 100%;
+            min-width: 100%;
+            will-change: transform;
         }
 
         /* Tarjetas de producto */
@@ -597,6 +620,10 @@
         }
 
         .galvatecho-bg {
+            background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+        }
+
+        .economuro-bg {
             background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
         }
 
@@ -685,7 +712,8 @@
 
         @media (max-width: 768px) {
             .product-card {
-                width: 280px;
+                width: 280px !important;
+                margin: 0 5px;
             }
             
             .carousel-wrapper {
@@ -774,7 +802,7 @@
                 
                 // Clonar al inicio
                 for (let i = clonesToAdd - 1; i >= 0; i--) {
-                    const clone = cards[(cards.length - 1 - i) % cards.length].cloneNode(true);
+                    const clone = cards[(cards.length - 1 - i + cards.length) % cards.length].cloneNode(true);
                     clone.classList.add('cloned');
                     track.insertBefore(clone, track.firstChild);
                 }
@@ -782,6 +810,11 @@
                 // Posicionar en el primer producto real
                 currentIndex = clonesToAdd;
                 updateTrackPosition(false);
+                
+                // Ajustar el ancho del track para que quepan todos los productos
+                const cardWidth = getCardWidth() + 30;
+                const totalCards = cards.length + (clonesToAdd * 2);
+                track.style.width = `${totalCards * cardWidth}px`;
             }
 
             // Actualizar posición del track
@@ -887,123 +920,796 @@
         });
     </script>
      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      
-     
-     
-     
-     
-
-
-
-
-<!-- REVIEWS -->
-  </section>
-
-  <section class="reviews" style="padding: 3rem 0; background:#2B4562; color: white; overflow: hidden;">
-    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-      <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; position: relative; display: block;">
-        Nuestros Clientes Satisfechos
-      </h2>
-      <div style="margin-bottom: 2rem; display: flex; justify-content: center;">
-        <div style="width: 207.5px; height: 80.5px; display: flex; align-items: center; justify-content: center;">
-          <img src="images/logogoogle.webp" alt="Google Reviews" style="width: 100%; height: 100%; object-fit: contain;">
-        </div>
-      </div>
-
-      <!-- Google Reviews Container -->
-      <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 0 1rem; width: 100%; box-sizing: border-box;">
-        <!-- Review Card 1 -->
-        <div style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 1.5rem; text-align: left; position: relative; backdrop-filter: blur(10px); width: 100%; box-sizing: border-box; margin: 0 auto; max-width: 320px;">
-          <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-            <div style="width: 40px; height: 40px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; overflow: hidden;">
-              <img src="images/logogoogleg.webp" alt="Google" style="width: 100%; height: 100%; object-fit: contain; padding: 5px;">
-            </div>
-            <div>
-              <h4 style="margin: 0; color: white; font-size: 1rem; font-weight: 600;">Carlos Sandoval</h4>
-              <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.8); margin-top: 2px;">Hace 1 mes</div>
-            </div>
-          </div>
-          <div style="font-size: 1.2rem; color: #fbbc04; margin-bottom: 1rem;">★★★★★</div>
-          <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; font-size: 0.95rem; margin: 0;">Buena calidad y variedad en materiales, buenos precios e impecable atención, son muy amables, buen servicio!</p>
-        </div>
-
-        <!-- Review Card 2 -->
-        <div style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 1.5rem; text-align: left; position: relative; backdrop-filter: blur(10px); width: 100%; box-sizing: border-box; margin: 0 auto; max-width: 320px;">
-          <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-            <div style="width: 40px; height: 40px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; overflow: hidden;">
-              <img src="images/logogoogleg.webp" alt="Google" style="width: 100%; height: 100%; object-fit: contain; padding: 5px;">
-            </div>
-            <div>
-              <h4 style="margin: 0; color: white; font-size: 1rem; font-weight: 600;">Daniel Castillo</h4>
-              <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.8); margin-top: 2px;">Hace 2 semanas</div>
-            </div>
-          </div>
-          <div style="font-size: 1.2rem; color: #fbbc04; margin-bottom: 1rem;">★★★★★</div>
-          <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; font-size: 0.95rem; margin: 0;">Tienen gran variedad de materiales, las entregas son rápidas y los precios accesibles. Los chicos de almacén son muy amables.</p>
-        </div>
-
+    
+     <!-- RESEÑAS -->
+<section style="overflow: hidden; margin-bottom: 80px;">
+    <div class="carousel-container">
+      <h1>Lo que nuestros clientes dicen</h1>
+      <div class="carousel-wrapper">
+        <button class="carousel-nav prev" onclick="pauseAndResume()">
+          <svg viewBox="0 0 24 24">
+            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
+          </svg>
+        </button>
+        <div class="carousel-track">
+            
        
+        <!-- Reseña 1 -->
+        <div class="review-card">
+            <div class="stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+            </div>
+            <div class="review-text">
+                Lucky to been there and got hired now only wish is left to go to space us
+            </div>
+            <div class="reviewer-info">
+                <div class="reviewer-avatar avatar-purple">R</div>
+                <div class="reviewer-details">
+                    <div class="reviewer-name">Ranjit Singh</div>
+                    <div class="reviewer-meta">@Ranjit... • 3 months ago</div>
+                </div>
+                <svg class="google-icon" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+            </div>
+        </div>
 
-      <!-- Google Rating -->
-      <div style="margin-top: 3rem; background: rgba(255, 255, 255, 0.1); display: inline-block; padding: 1rem 2rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1);">
-        <div style="display: flex; align-items: center; justify-content: center;">
-          <div style="margin-right: 1rem; font-size: 1.2rem;">
-            <span style="color: #fbbc04;">★★★★★</span>
-            <span style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; margin-left: 0.5rem;">4.9 de 5</span>
-          </div>
-          <div style="height: 24px; border-left: 1px solid rgba(255, 255, 255, 0.2); margin: 0 1rem;"></div>
-          <div style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.9);">
-            Basado en <strong>200+</strong> opiniones en Google
-          </div>
-          </div>
+        <!-- Reseña 2 -->
+        <div class="review-card">
+            <div class="stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+            </div>
+            <div class="review-text">
+                A very great place to study space. I admire what you do
+            </div>
+            <div class="reviewer-info">
+                <div class="reviewer-avatar avatar-red">A</div>
+                <div class="reviewer-details">
+                    <div class="reviewer-name">Anniy</div>
+                    <div class="reviewer-meta">@An... • 4 months ago</div>
+                </div>
+                <svg class="google-icon" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Reseña 3 -->
+        <div class="review-card">
+            <div class="stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+            </div>
+            <div class="review-text">
+                Great place for space 🚀 explorers
+            </div>
+            <div class="reviewer-info">
+                <div class="reviewer-avatar avatar-orange">M</div>
+                <div class="reviewer-details">
+                    <div class="reviewer-name">MUHAMMAD JAH...</div>
+                    <div class="reviewer-meta">@MUHAMMAD... • 5 months ago</div>
+                </div>
+                <svg class="google-icon" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Reseña 4 -->
+        <div class="review-card">
+            <div class="stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+            </div>
+            <div class="review-text">
+                Helmut Jahn was here.
+            </div>
+            <div class="reviewer-info">
+                <div class="reviewer-avatar avatar-blue">B</div>
+                <div class="reviewer-details">
+                    <div class="reviewer-name">Benjamin Chagüés...</div>
+                    <div class="reviewer-meta">@Benjamin... • a year ago</div>
+                </div>
+                <svg class="google-icon" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Reseña 5 -->
+        <div class="review-card">
+            <div class="stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+                <span class="star empty">★</span>
+            </div>
+            <div class="review-text">
+                It alright
+            </div>
+            <div class="reviewer-info">
+                <div class="reviewer-avatar avatar-green">D</div>
+                <div class="reviewer-details">
+                    <div class="reviewer-name">Daniel Chinagoro...</div>
+                    <div class="reviewer-meta">@Daniel Chin... • 5 years ago</div>
+                </div>
+                <svg class="google-icon" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Reseña 6 -->
+        <div class="review-card">
+            <div class="stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+            </div>
+            <div class="review-text">
+                Amazing facilities and incredible staff. The space program here is world-class!
+            </div>
+            <div class="reviewer-info">
+                <div class="reviewer-avatar avatar-purple">S</div>
+                <div class="reviewer-details">
+                    <div class="reviewer-name">Sarah Johnson</div>
+                    <div class="reviewer-meta">@Sarah... • 2 months ago</div>
+                </div>
+                <svg class="google-icon" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Reseña 7 -->
+        <div class="review-card">
+            <div class="stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star empty">★</span>
+            </div>
+            <div class="review-text">
+                Outstanding research facilities. The tour was educational and inspiring for my kids.
+            </div>
+            <div class="reviewer-info">
+                <div class="reviewer-avatar avatar-orange">C</div>
+                <div class="reviewer-details">
+                    <div class="reviewer-name">Carlos Martinez</div>
+                    <div class="reviewer-meta">@Carlos... • 6 weeks ago</div>
+                </div>
+                <svg class="google-icon" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Reseña 8 -->
+        <div class="review-card">
+            <div class="stars">
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+                <span class="star filled">★</span>
+            </div>
+            <div class="review-text">
+                Cutting-edge technology and brilliant minds working together. Truly impressive!
+            </div>
+            <div class="reviewer-info">
+                <div class="reviewer-avatar avatar-green">L</div>
+                <div class="reviewer-details">
+                    <div class="reviewer-name">Lisa Thompson</div>
+                    <div class="reviewer-meta">@Lisa... • 1 month ago</div>
+                </div>
+                <svg class="google-icon" viewBox="0 0 24 24">
+                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Reseñas duplicadas -->
+  <!-- Reseña 1 -->
+  <div class="review-card">
+    <div class="stars">
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+    </div>
+    <div class="review-text">
+        Lucky to been there and got hired now only wish is left to go to space us
+    </div>
+    <div class="reviewer-info">
+        <div class="reviewer-avatar avatar-purple">R</div>
+        <div class="reviewer-details">
+            <div class="reviewer-name">Ranjit Singh</div>
+            <div class="reviewer-meta">@Ranjit... • 3 months ago</div>
+        </div>
+        <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+    </div>
+ </div>
+
+ <!-- Reseña 2 -->
+ <div class="review-card">
+    <div class="stars">
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+    </div>
+    <div class="review-text">
+        A very great place to study space. I admire what you do
+    </div>
+    <div class="reviewer-info">
+        <div class="reviewer-avatar avatar-red">A</div>
+        <div class="reviewer-details">
+            <div class="reviewer-name">Anniy</div>
+            <div class="reviewer-meta">@An... • 4 months ago</div>
+        </div>
+        <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+    </div>
+ </div>
+
+ <!-- Reseña 3 -->
+ <div class="review-card">
+    <div class="stars">
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+    </div>
+    <div class="review-text">
+        Great place for space 🚀 explorers
+    </div>
+    <div class="reviewer-info">
+        <div class="reviewer-avatar avatar-orange">M</div>
+        <div class="reviewer-details">
+            <div class="reviewer-name">MUHAMMAD JAH...</div>
+            <div class="reviewer-meta">@MUHAMMAD... • 5 months ago</div>
+        </div>
+        <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+    </div>
+ </div>
+
+ <!-- Reseña 4 -->
+ <div class="review-card">
+    <div class="stars">
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+    </div>
+    <div class="review-text">
+        Helmut Jahn was here.
+    </div>
+    <div class="reviewer-info">
+        <div class="reviewer-avatar avatar-blue">B</div>
+        <div class="reviewer-details">
+            <div class="reviewer-name">Benjamin Chagüés...</div>
+            <div class="reviewer-meta">@Benjamin... • a year ago</div>
+        </div>
+        <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+    </div>
+ </div>
+
+ <!-- Reseña 5 -->
+ <div class="review-card">
+    <div class="stars">
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star empty">★</span>
+        <span class="star empty">★</span>
+        <span class="star empty">★</span>
+    </div>
+    <div class="review-text">
+        It alright
+    </div>
+    <div class="reviewer-info">
+        <div class="reviewer-avatar avatar-green">D</div>
+        <div class="reviewer-details">
+            <div class="reviewer-name">Daniel Chinagoro...</div>
+            <div class="reviewer-meta">@Daniel Chin... • 5 years ago</div>
+        </div>
+        <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+    </div>
+ </div>
+
+ <!-- Reseña 6 -->
+ <div class="review-card">
+    <div class="stars">
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+    </div>
+    <div class="review-text">
+        Amazing facilities and incredible staff. The space program here is world-class!
+    </div>
+    <div class="reviewer-info">
+        <div class="reviewer-avatar avatar-purple">S</div>
+        <div class="reviewer-details">
+            <div class="reviewer-name">Sarah Johnson</div>
+            <div class="reviewer-meta">@Sarah... • 2 months ago</div>
+        </div>
+        <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+    </div>
+ </div>
+
+ <!-- Reseña 7 -->
+ <div class="review-card">
+    <div class="stars">
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star empty">★</span>
+    </div>
+    <div class="review-text">
+        Outstanding research facilities. The tour was educational and inspiring for my kids.
+    </div>
+    <div class="reviewer-info">
+        <div class="reviewer-avatar avatar-orange">C</div>
+        <div class="reviewer-details">
+            <div class="reviewer-name">Carlos Martinez</div>
+            <div class="reviewer-meta">@Carlos... • 6 weeks ago</div>
+        </div>
+        <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+    </div>
+ </div>
+
+ <!-- Reseña 8 -->
+ <div class="review-card">
+    <div class="stars">
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+        <span class="star filled">★</span>
+    </div>
+    <div class="review-text">
+        Cutting-edge technology and brilliant minds working together. Truly impressive!
+    </div>
+    <div class="reviewer-info">
+        <div class="reviewer-avatar avatar-green">L</div>
+        <div class="reviewer-details">
+            <div class="reviewer-name">Lisa Thompson</div>
+            <div class="reviewer-meta">@Lisa... • 1 month ago</div>
+        </div>
+        <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+    </div>
+ </div>
         </div>
       </div>
     </div>
   </section>
 
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+   
+
+    .carousel-container {
+        max-width: 2000px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: 400;
+        color: #333;
+        margin-bottom: 30px;
+        text-align: center;
+        margin-top: 50px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        color: #333;
+        text-align: center;
+        margin-bottom: 50px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .carousel-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 20px;
+        animation: infiniteScroll 45s linear infinite;
+        width: calc(280px * 18 + 20px * 17); /* 9 cards * 2 + gaps */
+    }
+
+    .carousel-track:hover {
+        animation-play-state: paused;
+    }
+
+    .carousel-track.paused {
+        animation-play-state: paused;
+    }
+
+    @keyframes infiniteScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-280px * 9 - 20px * 8)); /* Width of original 9 cards + gaps */
+        }
+    }
+
+    .review-card {
+        min-width: 280px;
+        max-width: 280px;
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        border: 1px solid #e8eaed;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        flex-shrink: 0;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .review-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .stars {
+        display: flex;
+        margin-bottom: 15px;
+        gap: 2px;
+    }
+
+    .star {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+    }
+
+    .star.filled {
+        color: #fbbc04;
+    }
+
+    .star.empty {
+        color: #e0e0e0;
+    }
+
+    .review-text {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #3c4043;
+        margin-bottom: 15px;
+        min-height: 60px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .reviewer-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .reviewer-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 500;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+
+    .reviewer-details {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .reviewer-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: #3c4043;
+        margin-bottom: 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .reviewer-meta {
+        font-size: 12px;
+        color: #70757a;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .google-icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+
+    .carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        background: rgb(40, 5, 167);
+        border: 1px solid #023292;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.2s ease;
+        z-index: 10;
+    }
+
+    .carousel-nav:hover {
+        background: #04417d;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-color: #1a73e8;
+    }
+
+    .carousel-nav.prev {
+        left: -60px;
+    }
+
+    .carousel-nav.next {
+        right: -60px;
+    }
+
+    .carousel-nav svg {
+        width: 20px;
+        height: 20px;
+        fill: #5f6368;
+        transition: fill 0.2s ease;
+    }
+
+    .carousel-nav:hover svg {
+        fill: #1a73e8;
+    }
+
+    /* Avatares con colores */
+    .avatar-purple { background: linear-gradient(135deg, #9c27b0, #e91e63); }
+    .avatar-red { background: linear-gradient(135deg, #f44336, #ff5722); }
+    .avatar-orange { background: linear-gradient(135deg, #ff9800, #ff5722); }
+    .avatar-blue { background: linear-gradient(135deg, #2196f3, #3f51b5); }
+    .avatar-green { background: linear-gradient(135deg, #4caf50, #8bc34a); }
+
+    /* Control de pausa */
+    .pause-control {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(17, 0, 201, 0.9);
+        border: 1px solid #e0e0e0;
+        border-radius: 20px;
+        padding: 8px 12px;
+        font-size: 12px;
+        color: #666;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .pause-control:hover {
+        background: rgb(10, 23, 201);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .carousel-container {
+            padding: 0 10px;
+        }
+        
+        .carousel-nav {
+            display: none;
+        }
+        
+        .review-card {
+            min-width: 260px;
+            max-width: 260px;
+        }
+        
+        @keyframes infiniteScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-260px * 9 - 20px * 8));
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .review-card {
+            min-width: 240px;
+            max-width: 240px;
+            padding: 16px;
+        }
+
+        .carousel-wrapper {
+            padding: 15px;
+        }
+    }
+ </style>
+
+
+
+
+
+
+
+
 
 
   <!-- Carrusel de proveedores -->
-<section class="marcas-carousel" style="background-color: #f9f9f9; padding: 1.5rem 0; margin: 0; overflow: hidden;">
+ <section class="marcas-carousel" style="background-color: #f9f9f9; padding: 1.5rem 0; margin: 0; overflow: hidden;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
       <div class="marcas-track" style="display: flex; align-items: center; justify-content: space-around; animation: scroll 20s linear infinite; width: calc(250px * 10);">
         <!-- Logos de proveedores - se duplican para el efecto de scroll infinito -->
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor1.webp" alt="proveedor 1" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_proveedor_isocindu.webp" alt="proveedor 1" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor2.webp" alt="proveedor 2" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_Proveedor_Kingspan.webp" alt="proveedor 2" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor3.webp" alt="proveedor 3" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_proveedor_owens.webp" alt="proveedor 3" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor4.webp" alt="proveedor 4" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_proveedor_stabilit.webp" alt="proveedor 4" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor5.webp" alt="proveedor 5" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_proveedor_Ternium.webp" alt="proveedor 5" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor6.webp" alt="proveedor 6" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_proveedores_termofoam.webp" alt="proveedor 6" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <!-- Duplicar los logos para el efecto de scroll infinito -->
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor1.webp" alt="proveedor 1" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_proveedor_isocindu.webp" alt="proveedor 1" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor2.webp" alt="proveedor 2" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_Proveedor_Kingspan.webp" alt="proveedor 2" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor3.webp" alt="proveedor 3" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_proveedor_owens.webp" alt="proveedor 3" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor4.webp" alt="proveedor 4" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_proveedor_stabilit.webp" alt="proveedor 4" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor5.webp" alt="proveedor 5" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_proveedor_Ternium.webp" alt="proveedor 5" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
         <div class="marcas-slide" style="flex-shrink: 0; padding: 0 15px;">
-          <img src="images/provedor6.webp" alt="proveedor 6" style="height: 60px; width: auto; object-fit: contain; ">
+          <img src="images/4taParteProvedores/Logo_proveedor_termofoam.webp" alt="proveedor 6" style="height: 60px; width: auto; object-fit: contain; ">
         </div>
       </div>
     </div>
@@ -1031,6 +1737,10 @@
       }
     </style>
   </section>
+
+
+
+
   <!-- Sección de confianza y beneficios -->
   <section class="trust-section">
     <div class="trust-container">
@@ -1039,15 +1749,23 @@
             <div class="image-carousel">
                 <div class="carousel-images" id="imageCarousel">
                     <div class="carousel-slide active">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Cdefs%3E%3ClinearGradient id='floor' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e8e8e8'/%3E%3Cstop offset='100%25' style='stop-color:%23d0d0d0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='400' fill='%23f0f0f0'/%3E%3C!-- Techo industrial --%3E%3Crect x='0' y='0' width='600' height='80' fill='%23ddd'/%3E%3Cg%3E%3Crect x='50' y='10' width='500' height='15' fill='%23ccc'/%3E%3Crect x='100' y='30' width='400' height='15' fill='%23bbb'/%3E%3Crect x='150' y='50' width='300' height='15' fill='%23aaa'/%3E%3C/g%3E%3C!-- Grúa amarilla --%3E%3Crect x='450' y='20' width='100' height='15' fill='%23f1c40f'/%3E%3Ctext x='475' y='35' fill='%23333' font-size='8' font-weight='bold'%3ETON%3C/text%3E%3C!-- Piso industrial --%3E%3Crect x='0' y='300' width='600' height='100' fill='url(%23floor)'/%3E%3C!-- Equipos y maquinaria --%3E%3Crect x='50' y='250' width='80' height='50' fill='%23666' rx='5'/%3E%3Crect x='200' y='220' width='100' height='80' fill='%23555' rx='5'/%3E%3Crect x='350' y='240' width='90' height='60' fill='%23777' rx='5'/%3E%3Crect x='480' y='260' width='70' height='40' fill='%23888' rx='5'/%3E%3C!-- Reflectores --%3E%3Ccircle cx='100' cy='100' r='8' fill='%23fff' opacity='0.8'/%3E%3Ccircle cx='300' cy='120' r='8' fill='%23fff' opacity='0.8'/%3E%3Ccircle cx='500' cy='110' r='8' fill='%23fff' opacity='0.8'/%3E%3C/svg%3E" alt="Instalaciones industriales">
+                        <img src="images/5taParteClientesSatisfechos/Nave industrial_multipanel_guadalajara 1.webp" alt="Nave industrial multipanel">
                     </div>
                     <div class="carousel-slide">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f5f5f5'/%3E%3C!-- Almacén de productos --%3E%3Crect x='0' y='0' width='600' height='60' fill='%23e0e0e0'/%3E%3C!-- Estantes con productos --%3E%3Cg%3E%3Crect x='50' y='80' width='100' height='200' fill='%23ddd' stroke='%23999' stroke-width='2'/%3E%3Crect x='60' y='90' width='80' height='30' fill='%23ff6b35' opacity='0.7'/%3E%3Crect x='60' y='130' width='80' height='30' fill='%23ff8c42' opacity='0.7'/%3E%3Crect x='60' y='170' width='80' height='30' fill='%23ffa500' opacity='0.7'/%3E%3Crect x='60' y='210' width='80' height='30' fill='%23ff6347' opacity='0.7'/%3E%3C/g%3E%3Cg%3E%3Crect x='200' y='80' width='100' height='200' fill='%23ddd' stroke='%23999' stroke-width='2'/%3E%3Crect x='210' y='90' width='80' height='30' fill='%234a90e2' opacity='0.7'/%3E%3Crect x='210' y='130' width='80' height='30' fill='%235dade2' opacity='0.7'/%3E%3Crect x='210' y='170' width='80' height='30' fill='%2374b9ff' opacity='0.7'/%3E%3Crect x='210' y='210' width='80' height='30' fill='%23a4b0be' opacity='0.7'/%3E%3C/g%3E%3Cg%3E%3Crect x='350' y='80' width='100' height='200' fill='%23ddd' stroke='%23999' stroke-width='2'/%3E%3Crect x='360' y='90' width='80' height='30' fill='%2355a3ff' opacity='0.7'/%3E%3Crect x='360' y='130' width='80' height='30' fill='%233742fa' opacity='0.7'/%3E%3Crect x='360' y='170' width='80' height='30' fill='%235f27cd' opacity='0.7'/%3E%3Crect x='360' y='210' width='80' height='30' fill='%23a55eea' opacity='0.7'/%3E%3C/g%3E%3C!-- Montacargas --%3E%3Crect x='480' y='200' width='80' height='40' fill='%23f39c12' rx='5'/%3E%3Crect x='490' y='180' width='10' height='60' fill='%23e67e22'/%3E%3Crect x='530' y='180' width='10' height='60' fill='%23e67e22'/%3E%3C!-- Piso --%3E%3Crect x='0' y='320' width='600' height='80' fill='%23ecf0f1'/%3E%3C/svg%3E" alt="Almacén de productos">
+                        <img src="images/5taParteClientesSatisfechos/Nave_Industrial_de_Multymuro_y_Multypanel.webp" alt="Nave Industrial multymuro y multypanel">
                     </div>
                     <div class="carousel-slide">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f8f9fa'/%3E%3C!-- Oficinas modernas --%3E%3Crect x='0' y='0' width='600' height='80' fill='%23e9ecef'/%3E%3C!-- Ventanas --%3E%3Crect x='50' y='100' width='120' height='80' fill='%23e3f2fd' stroke='%23333' stroke-width='2'/%3E%3Crect x='200' y='100' width='120' height='80' fill='%23e3f2fd' stroke='%23333' stroke-width='2'/%3E%3Crect x='350' y='100' width='120' height='80' fill='%23e3f2fd' stroke='%23333' stroke-width='2'/%3E%3C!-- Escritorios --%3E%3Crect x='80' y='220' width='60' height='40' fill='%23795548' rx='3'/%3E%3Crect x='180' y='220' width='60' height='40' fill='%23795548' rx='3'/%3E%3Crect x='280' y='220' width='60' height='40' fill='%23795548' rx='3'/%3E%3Crect x='380' y='220' width='60' height='40' fill='%23795548' rx='3'/%3E%3C!-- Sillas --%3E%3Ccircle cx='110' cy='270' r='12' fill='%23333'/%3E%3Ccircle cx='210' cy='270' r='12' fill='%23333'/%3E%3Ccircle cx='310' cy='270' r='12' fill='%23333'/%3E%3Ccircle cx='410' cy='270' r='12' fill='%23333'/%3E%3C!-- Computadoras --%3E%3Crect x='90' y='210' width='20' height='15' fill='%23333' rx='2'/%3E%3Crect x='190' y='210' width='20' height='15' fill='%23333' rx='2'/%3E%3Crect x='290' y='210' width='20' height='15' fill='%23333' rx='2'/%3E%3Crect x='390' y='210' width='20' height='15' fill='%23333' rx='2'/%3E%3C!-- Piso de oficina --%3E%3Crect x='0' y='320' width='600' height='80' fill='%23f1f3f4'/%3E%3C/svg%3E" alt="Oficinas administrativas">
+                        <img src="images/5taParteClientesSatisfechos/Nave_Industrial_multypanel.webp" alt="Nave Industrial multypanel">
                     </div>
+                    <div class="carousel-slide">
+                        <img src="images/5taParteClientesSatisfechos/Proyecto_Caseta_de_Multymuro.webp" alt="Caseta de Multymuro">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/5taParteClientesSatisfechos/Proyecto_Multymuro_panel_termico.webp" alt="Panel Termico">
+                    </div>
+                    
                 </div>
+
                 
                 <!-- Indicadores del carrusel -->
                 <div class="carousel-indicators">
@@ -1094,9 +1812,9 @@
             </div>
         </div>
     </div>
-</section>
+ </section>
 
-<style>
+ <style>
     /* Sección de confianza */
     .trust-section {
         background: #ffffff;
@@ -1408,9 +2126,9 @@
             font-size: 1rem;
         }
     }
-</style>
+ </style>
 
-<script>
+ <script>
     // Script para el carrusel de imágenes de confianza
     document.addEventListener('DOMContentLoaded', function() {
         const slides = document.querySelectorAll('.carousel-slide');
@@ -1500,109 +2218,111 @@
         // Inicializar el carrusel
         initCarousel();
     });
-</script>
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Sección de dudas y información -->
-<section class="dudas-section">
-    <div class="carousel-container">
-        <div class="carousel-header">
+<section class="dudas-section" id="dudas-section">
+    <div class="dudas-carousel-container">
+        <div class="dudas-carousel-header">
             <h2>¿Tienes dudas?</h2>
             <p>Aquí te dejamos más información</p>
         </div>
 
-        <div class="carousel-wrapper">
-            <div class="carousel-track" id="carouselTrack">
+        <div class="dudas-carousel-wrapper">
+            <div class="dudas-carousel-track" id="dudasCarouselTrack">
                 <!-- Slide 1: Multytecho -->
-                <div class="carousel-slide slide-1">
-                    <div class="slide-content">
-                        <h3 class="slide-title">MULTYTECHO</h3>
-                        <p class="slide-description">
+                <div class="dudas-slide slide-1">
+                    <div class="dudas-slide-content">
+                        <h3 class="dudas-slide-title">MULTYTECHO</h3>
+                        <p class="dudas-slide-description">
                             Utilizado principalmente en cámaras de refrigeración, casetas o campers, como cubierta en edificios o restaurantes y tiendas de autoservicio, entre otros.
                         </p>
                     </div>
-                    <div class="panel-visual">
-                        <div class="panel-3d">
-                            <div class="multytecho-panel"></div>
-                        </div>
+                    <div class="dudas-panel-visual">
+                        <img src="images/6taParteTienesdudas/Ternium_Multytecho.webp" alt="Panel Multytecho" class="dudas-panel-image">
                     </div>
                 </div>
 
                 <!-- Slide 2: ISOCOP -->
-                <div class="carousel-slide slide-2">
-                    <div class="slide-content">
-                        <h3 class="slide-title">ISOCOP 4</h3>
-                        <p class="slide-description">
+                <div class="dudas-slide slide-2">
+                    <div class="dudas-slide-content">
+                        <h3 class="dudas-slide-title">ISOCOP 4</h3>
+                        <p class="dudas-slide-description">
                             Es adecuado para ser utilizado en construcción industrial, zootécnica y residencial.
                         </p>
                     </div>
-                    <div class="panel-visual">
-                        <div class="panel-3d">
-                            <div class="isocop-panel"></div>
-                        </div>
+                    <div class="dudas-panel-visual">
+                        <img src="images/6taParteTienesdudas/Isocindu_Isocop_4.webp" alt="Panel Isocop 4" class="dudas-panel-image">
                     </div>
                 </div>
 
                 <!-- Slide 3: Galvatecho -->
-                <div class="carousel-slide slide-3">
-                    <div class="slide-content">
-                        <h3 class="slide-title">GALVATECHO</h3>
-                        <p class="slide-description">
+                <div class="dudas-slide slide-3">
+                    <div class="dudas-slide-content">
+                        <h3 class="dudas-slide-title">GALVATECHO</h3>
+                        <p class="dudas-slide-description">
                             Es ideal para almacenes de alimentos, centros comerciales, oficinas móviles y aulas.
                         </p>
                     </div>
-                    <div class="panel-visual">
-                        <div class="panel-3d">
-                            <div class="galvatecho-panel"></div>
-                        </div>
+                    <div class="dudas-panel-visual">
+                        <img src="images/6taParteTienesdudaS/Ternium_Galvatecho.webp" alt="Panel Galvatecho" class="dudas-panel-image">
                     </div>
                 </div>
 
                 <!-- Slide 4: Economuro -->
-                <div class="carousel-slide slide-4">
-                    <div class="slide-content">
-                        <h3 class="slide-title">ECONOMURO</h3>
-                        <p class="slide-description">
+                <div class="dudas-slide slide-4">
+                    <div class="dudas-slide-content">
+                        <h3 class="dudas-slide-title">ECONOMURO</h3>
+                        <p class="dudas-slide-description">
                             Utilizado en muros, fachadas o plafones de construcciones que requieran buena capacidad de aislamiento térmico y estructural.
                         </p>
                     </div>
-                    <div class="panel-visual">
-                        <div class="panel-3d">
-                            <div class="economuro-panel"></div>
-                        </div>
+                    <div class="dudas-panel-visual">
+                        <img src="images/6taParteTienesdudas/Ternium_Economuro.webp" alt="Panel Economuro" class="dudas-panel-image">
                     </div>
                 </div>
 
                 <!-- Slide 5: Econotecho -->
-                <div class="carousel-slide slide-5">
-                    <div class="slide-content">
-                        <h3 class="slide-title">ECONOTECHO</h3>
-                        <p class="slide-description">
+                <div class="dudas-slide slide-5">
+                    <div class="dudas-slide-content">
+                        <h3 class="dudas-slide-title">ECONOTECHO</h3>
+                        <p class="dudas-slide-description">
                             Es ideal para cumplir con altos requerimientos térmicos, acústicos, estructurales y de desagüe, su manejo e instalación es fácil y rápido.
                         </p>
-                        <a href="#" class="contact-button">CONTACTAR UN ASESOR</a>
+                        <a href="#" class="dudas-contact-button">CONTACTAR UN ASESOR</a>
                     </div>
-                    <div class="panel-visual">
-                        <div class="panel-3d">
-                            <div class="econotecho-panel"></div>
-                        </div>
+                    <div class="dudas-panel-visual">
+                        <img src="images/6taParteTienesdudas/Ternium_Econotecho.webp" alt="Panel Econotecho" class="dudas-panel-image">
                     </div>
                 </div>
             </div>
 
-            <button class="carousel-arrows prev" onclick="prevSlide()">‹</button>
-            <button class="carousel-arrows next" onclick="nextSlide()">›</button>
+            <button class="dudas-carousel-arrows prev" onclick="dudasPrevSlide()">‹</button>
+            <button class="dudas-carousel-arrows next" onclick="dudasNextSlide()">›</button>
         </div>
 
-        <div class="carousel-nav">
-            <span class="nav-dot active" onclick="goToSlide(0)"></span>
-            <span class="nav-dot" onclick="goToSlide(1)"></span>
-            <span class="nav-dot" onclick="goToSlide(2)"></span>
-            <span class="nav-dot" onclick="goToSlide(3)"></span>
-            <span class="nav-dot" onclick="goToSlide(4)"></span>
+        <div class="dudas-carousel-nav">
+            <span class="dudas-nav-dot active" onclick="dudasGoToSlide(0)"></span>
+            <span class="dudas-nav-dot" onclick="dudasGoToSlide(1)"></span>
+            <span class="dudas-nav-dot" onclick="dudasGoToSlide(2)"></span>
+            <span class="dudas-nav-dot" onclick="dudasGoToSlide(3)"></span>
+            <span class="dudas-nav-dot" onclick="dudasGoToSlide(4)"></span>
         </div>
 
-        <div class="main-contact-section">
-            <a href="#" class="main-contact-button" onclick="contactWhatsApp()">
+        <div class="dudas-main-contact-section">
+            <a href="#" class="dudas-main-contact-button" onclick="contactWhatsApp()">
                 CONTACTAR UN ASESOR
             </a>
         </div>
@@ -1611,13 +2331,13 @@
 
 <style>
     /* Estilos para la sección de dudas */
-    .dudas-section {
+    #dudas-section {
         background: #f8f9fa;
         padding: 80px 0;
         position: relative;
     }
 
-    .dudas-section .carousel-container {
+    #dudas-section .dudas-carousel-container {
         max-width: 1200px;
         margin: 0 auto;
         position: relative;
@@ -1627,39 +2347,37 @@
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
-    .dudas-section .carousel-header {
+    #dudas-section .dudas-carousel-header {
         text-align: center;
         margin-bottom: 40px;
     }
 
-    .dudas-section .carousel-header h2 {
+    #dudas-section .dudas-carousel-header h2 {
         font-size: 2.5rem;
         color: #333;
         font-weight: bold;
         margin-bottom: 10px;
     }
 
-    .dudas-section .carousel-header p {
+    #dudas-section .dudas-carousel-header p {
         font-size: 1.2rem;
         color: #666;
         font-style: italic;
     }
 
-    .dudas-section .carousel-wrapper {
+    #dudas-section .dudas-carousel-wrapper {
         position: relative;
         border-radius: 15px;
-        /* Removido overflow: hidden para asegurar visibilidad */
     }
 
-    .dudas-section .carousel-track {
+    #dudas-section .dudas-carousel-track {
         display: flex;
         transition: transform 0.5s ease;
         width: 500%;
-        /* Asegurar que todos los slides sean visibles */
         min-height: 500px;
     }
 
-    .dudas-section .carousel-slide {
+    #dudas-section .dudas-slide {
         width: 20%;
         min-height: 500px;
         background: linear-gradient(135deg, #FF4500, #FF6B35);
@@ -1668,16 +2386,14 @@
         justify-content: space-between;
         padding: 40px;
         position: relative;
-        /* Removido overflow: hidden para mostrar todo el contenido */
         border-radius: 15px;
         margin: 0 5px;
     }
 
-    .dudas-section .slide-content {
+    #dudas-section .dudas-slide-content {
         width: 45%;
         color: white;
         z-index: 2;
-        /* Asegurar que el contenido sea siempre visible */
         position: relative;
         padding: 20px;
         background: rgba(0,0,0,0.1);
@@ -1685,184 +2401,48 @@
         backdrop-filter: blur(5px);
     }
 
-    .dudas-section .slide-title {
+    #dudas-section .dudas-slide-title {
         font-size: 2.5rem;
         font-weight: bold;
         margin-bottom: 20px;
         text-transform: uppercase;
         letter-spacing: 2px;
-        /* Asegurar visibilidad del título */
         text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
-    .dudas-section .slide-description {
+    #dudas-section .dudas-slide-description {
         font-size: 1.1rem;
         line-height: 1.6;
         margin-bottom: 30px;
-        /* Asegurar visibilidad de la descripción */
         text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     }
 
-    .dudas-section .panel-visual {
+    #dudas-section .dudas-panel-visual {
         width: 45%;
         height: 300px;
         position: relative;
         z-index: 2;
-        /* Asegurar que el panel visual sea visible */
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .dudas-section .panel-3d {
+    #dudas-section .dudas-panel-image {
         width: 100%;
         height: 100%;
-        position: relative;
-        transform-style: preserve-3d;
-        animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-        0%, 100% { transform: translateY(0px) rotateX(-10deg) rotateY(15deg); }
-        50% { transform: translateY(-10px) rotateX(-10deg) rotateY(15deg); }
-    }
-
-    /* Paneles específicos con mejor visibilidad */
-    .dudas-section .multytecho-panel {
-        width: 100%;
-        height: 60px;
-        background: linear-gradient(45deg, #e0e0e0, #f5f5f5);
-        border-radius: 0 0 20px 20px;
-        position: relative;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        border: 2px solid rgba(255,255,255,0.3);
-    }
-
-    .dudas-section .multytecho-panel::before {
-        content: '';
-        position: absolute;
-        top: -15px;
-        left: 0;
-        right: 0;
-        height: 15px;
-        background: repeating-linear-gradient(
-            90deg,
-            #d0d0d0 0px,
-            #d0d0d0 8px,
-            #c0c0c0 8px,
-            #c0c0c0 16px
-        );
-        border-radius: 8px 8px 0 0;
-    }
-
-    .dudas-section .isocop-panel {
-        width: 100%;
-        height: 80px;
-        background: linear-gradient(45deg, #2c3e50, #34495e);
-        position: relative;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        border: 2px solid rgba(255,255,255,0.3);
-    }
-
-    .dudas-section .isocop-panel::before {
-        content: '';
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        right: 10px;
-        height: 60px;
-        background: repeating-linear-gradient(
-            0deg,
-            #ecf0f1 0px,
-            #ecf0f1 4px,
-            #bdc3c7 4px,
-            #bdc3c7 8px
-        );
-        border-radius: 5px;
-    }
-
-    .dudas-section .galvatecho-panel {
-        width: 100%;
-        height: 70px;
-        background: linear-gradient(45deg, #95a5a6, #bdc3c7);
-        position: relative;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        border-radius: 5px;
-        border: 2px solid rgba(255,255,255,0.3);
-    }
-
-    .dudas-section .galvatecho-panel::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        background: repeating-linear-gradient(
-            90deg,
-            transparent 0px,
-            transparent 15px,
-            rgba(255,255,255,0.3) 15px,
-            rgba(255,255,255,0.3) 17px
-        );
-    }
-
-    .dudas-section .economuro-panel {
-        width: 100%;
-        height: 100px;
-        background: linear-gradient(45deg, #8e44ad, #9b59b6);
-        position: relative;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        object-fit: cover;
         border-radius: 10px;
-        border: 2px solid rgba(255,255,255,0.3);
-    }
-
-    .dudas-section .economuro-panel::before {
-        content: '';
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        right: 15px;
-        bottom: 15px;
-        background: linear-gradient(45deg, #f39c12, #e67e22);
-        border-radius: 5px;
-    }
-
-    .dudas-section .econotecho-panel {
-        width: 100%;
-        height: 75px;
-        background: linear-gradient(45deg, #27ae60, #2ecc71);
-        position: relative;
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        border-radius: 15px;
-        border: 2px solid rgba(255,255,255,0.3);
     }
 
-    .dudas-section .econotecho-panel::before {
-        content: '';
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        right: 5px;
-        bottom: 5px;
-        background: repeating-linear-gradient(
-            45deg,
-            #ecf0f1 0px,
-            #ecf0f1 10px,
-            #d5dbdb 10px,
-            #d5dbdb 20px
-        );
-        border-radius: 10px;
-    }
-
-    .dudas-section .carousel-nav {
+    #dudas-section .dudas-carousel-nav {
         display: flex;
         justify-content: center;
         margin-top: 30px;
         gap: 10px;
     }
 
-    .dudas-section .nav-dot {
+    #dudas-section .dudas-nav-dot {
         width: 15px;
         height: 15px;
         border-radius: 50%;
@@ -1871,12 +2451,12 @@
         transition: all 0.3s ease;
     }
 
-    .dudas-section .nav-dot.active {
+    #dudas-section .dudas-nav-dot.active {
         background: #FF4500;
         transform: scale(1.2);
     }
 
-    .dudas-section .carousel-arrows {
+    #dudas-section .dudas-carousel-arrows {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -1892,20 +2472,20 @@
         z-index: 3;
     }
 
-    .dudas-section .carousel-arrows:hover {
+    #dudas-section .dudas-carousel-arrows:hover {
         background: white;
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
-    .dudas-section .prev {
+    #dudas-section .prev {
         left: 20px;
     }
 
-    .dudas-section .next {
+    #dudas-section .next {
         right: 20px;
     }
 
-    .dudas-section .contact-button {
+    #dudas-section .dudas-contact-button {
         display: inline-block;
         padding: 15px 30px;
         background: white;
@@ -1920,19 +2500,19 @@
         transition: all 0.3s ease;
     }
 
-    .dudas-section .contact-button:hover {
+    #dudas-section .dudas-contact-button:hover {
         background: transparent;
         color: white;
     }
 
-    .dudas-section .main-contact-section {
+    #dudas-section .dudas-main-contact-section {
         text-align: center;
         margin-top: 40px;
         padding-top: 30px;
         border-top: 2px solid #f0f0f0;
     }
 
-    .dudas-section .main-contact-button {
+    #dudas-section .dudas-main-contact-button {
         display: inline-block;
         padding: 18px 50px;
         background: #000;
@@ -1948,7 +2528,7 @@
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
-    .dudas-section .main-contact-button:hover {
+    #dudas-section .dudas-main-contact-button:hover {
         background: transparent;
         color: #000;
         transform: translateY(-2px);
@@ -1956,39 +2536,39 @@
     }
 
     /* Fondos específicos para cada slide */
-    .dudas-section .slide-1 { background: linear-gradient(135deg, #FF4500, #FF6B35); }
-    .dudas-section .slide-2 { background: linear-gradient(135deg, #3498db, #2980b9); }
-    .dudas-section .slide-3 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-    .dudas-section .slide-4 { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
-    .dudas-section .slide-5 { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+    #dudas-section .slide-1 { background: linear-gradient(135deg, #FF4500, #FF6B35); }
+    #dudas-section .slide-2 { background: linear-gradient(135deg, #3498db, #2980b9); }
+    #dudas-section .slide-3 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+    #dudas-section .slide-4 { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+    #dudas-section .slide-5 { background: linear-gradient(135deg, #2ecc71, #27ae60); }
 
     /* Responsive design */
     @media (max-width: 768px) {
-        .dudas-section .carousel-slide {
+        #dudas-section .dudas-slide {
             flex-direction: column;
             text-align: center;
             padding: 30px 20px;
         }
 
-        .dudas-section .slide-content {
+        #dudas-section .dudas-slide-content {
             width: 100%;
             margin-bottom: 30px;
         }
 
-        .dudas-section .panel-visual {
+        #dudas-section .dudas-panel-visual {
             width: 100%;
             height: 200px;
         }
 
-        .dudas-section .slide-title {
+        #dudas-section .dudas-slide-title {
             font-size: 2rem;
         }
 
-        .dudas-section .slide-description {
+        #dudas-section .dudas-slide-description {
             font-size: 1rem;
         }
 
-        .dudas-section .carousel-arrows {
+        #dudas-section .dudas-carousel-arrows {
             width: 40px;
             height: 40px;
             font-size: 1.2rem;
@@ -1996,32 +2576,32 @@
     }
 
     @media (max-width: 480px) {
-        .dudas-section .carousel-container {
+        #dudas-section .dudas-carousel-container {
             padding: 20px 15px;
         }
 
-        .dudas-section .carousel-header h2 {
+        #dudas-section .dudas-carousel-header h2 {
             font-size: 2rem;
         }
 
-        .dudas-section .carousel-header p {
+        #dudas-section .dudas-carousel-header p {
             font-size: 1rem;
         }
 
-        .dudas-section .slide-title {
+        #dudas-section .dudas-slide-title {
             font-size: 1.5rem;
         }
 
-        .dudas-section .slide-description {
+        #dudas-section .dudas-slide-description {
             font-size: 0.9rem;
         }
 
-        .dudas-section .contact-button {
+        #dudas-section .dudas-contact-button {
             padding: 12px 25px;
             font-size: 1rem;
         }
 
-        .dudas-section .main-contact-button {
+        #dudas-section .dudas-main-contact-button {
             padding: 15px 30px;
             font-size: 1rem;
         }
@@ -2031,24 +2611,24 @@
 <script>
     // Script mejorado para el carrusel de dudas
     document.addEventListener('DOMContentLoaded', function() {
-        let currentSlide = 0;
-        const totalSlides = 5;
-        const track = document.getElementById('carouselTrack');
-        const dots = document.querySelectorAll('.nav-dot');
+        let currentDudasSlide = 0;
+        const totalDudasSlides = 5;
+        const dudasTrack = document.getElementById('dudasCarouselTrack');
+        const dudasDots = document.querySelectorAll('.dudas-nav-dot');
 
-        function updateCarousel() {
-            const translateX = -currentSlide * 20;
-            track.style.transform = `translateX(${translateX}%)`;
+        function updateDudasCarousel() {
+            const translateX = -currentDudasSlide * 20;
+            dudasTrack.style.transform = `translateX(${translateX}%)`;
             
             // Actualizar indicadores
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentSlide);
+            dudasDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentDudasSlide);
             });
 
             // Asegurar que el contenido sea visible
-            const slides = document.querySelectorAll('.carousel-slide');
-            slides.forEach((slide, index) => {
-                if (index === currentSlide) {
+            const dudasSlides = document.querySelectorAll('#dudas-section .dudas-slide');
+            dudasSlides.forEach((slide, index) => {
+                if (index === currentDudasSlide) {
                     slide.style.opacity = '1';
                     slide.style.visibility = 'visible';
                 } else {
@@ -2058,90 +2638,79 @@
             });
         }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
+        function dudasNextSlide() {
+            currentDudasSlide = (currentDudasSlide + 1) % totalDudasSlides;
+            updateDudasCarousel();
         }
 
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
+        function dudasPrevSlide() {
+            currentDudasSlide = (currentDudasSlide - 1 + totalDudasSlides) % totalDudasSlides;
+            updateDudasCarousel();
         }
 
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            updateCarousel();
+        function dudasGoToSlide(slideIndex) {
+            currentDudasSlide = slideIndex;
+            updateDudasCarousel();
         }
 
         // Auto-play carousel con pausa en hover
-        let autoPlayInterval = setInterval(nextSlide, 5000);
-        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        let dudasAutoPlayInterval = setInterval(dudasNextSlide, 5000);
+        const dudasCarouselWrapper = document.querySelector('#dudas-section .dudas-carousel-wrapper');
 
-        if (carouselWrapper) {
-            carouselWrapper.addEventListener('mouseenter', () => {
-                clearInterval(autoPlayInterval);
+        if (dudasCarouselWrapper) {
+            dudasCarouselWrapper.addEventListener('mouseenter', () => {
+                clearInterval(dudasAutoPlayInterval);
             });
 
-            carouselWrapper.addEventListener('mouseleave', () => {
-                autoPlayInterval = setInterval(nextSlide, 5000);
+            dudasCarouselWrapper.addEventListener('mouseleave', () => {
+                dudasAutoPlayInterval = setInterval(dudasNextSlide, 5000);
             });
         }
 
         // Touch/swipe support
-        let startX = 0;
-        let endX = 0;
+        let dudasStartX = 0;
+        let dudasEndX = 0;
 
-        if (track) {
-            track.addEventListener('touchstart', e => {
-                startX = e.touches[0].clientX;
+        if (dudasTrack) {
+            dudasTrack.addEventListener('touchstart', e => {
+                dudasStartX = e.touches[0].clientX;
             });
 
-            track.addEventListener('touchend', e => {
-                endX = e.changedTouches[0].clientX;
-                handleSwipe();
+            dudasTrack.addEventListener('touchend', e => {
+                dudasEndX = e.changedTouches[0].clientX;
+                handleDudasSwipe();
             });
         }
 
-        function handleSwipe() {
+        function handleDudasSwipe() {
             const swipeThreshold = 50;
-            const diff = startX - endX;
+            const diff = dudasStartX - dudasEndX;
             
             if (Math.abs(diff) > swipeThreshold) {
                 if (diff > 0) {
-                    nextSlide();
+                    dudasNextSlide();
                 } else {
-                    prevSlide();
+                    dudasPrevSlide();
                 }
             }
         }
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prevSlide();
-            if (e.key === 'ArrowRight') nextSlide();
-        });
-
-        // WhatsApp contact function
-        function contactWhatsApp() {
-            const phoneNumber = '5212345678900';
-            const message = encodeURIComponent('Hola! Me interesa obtener más información sobre sus paneles de construcción. ¿Podrían ayudarme con una cotización?');
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-            window.open(whatsappURL, '_blank');
-        }
-
-        // Hacer la función global
-        window.contactWhatsApp = contactWhatsApp;
-        window.prevSlide = prevSlide;
-        window.nextSlide = nextSlide;
-        window.goToSlide = goToSlide;
+        // Hacer las funciones globales
+        window.dudasPrevSlide = dudasPrevSlide;
+        window.dudasNextSlide = dudasNextSlide;
+        window.dudasGoToSlide = dudasGoToSlide;
 
         // Inicializar el carrusel
-        updateCarousel();
+        updateDudasCarousel();
     });
 </script>
 
-<!-- SUCURSALES -->
-<section class="sucursales">
+
+
+
+
+ <!-- SUCURSALES -->
+ <section class="sucursales">
     <h2>Nuestras Sucursales</h2>
     <p class="sucursales-subtitle" style="color: #2d2d2d;">Visítanos en cualquiera de nuestras ubicaciones en Jalisco y Colima</p>
     

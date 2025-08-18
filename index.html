@@ -884,150 +884,174 @@
         }
     </style>
 
-    <script>
-        // Script del carrusel de productos
-        document.addEventListener('DOMContentLoaded', function() {
-            const track = document.getElementById('productTrack');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const cards = Array.from(track.children);
+<script>
+    // Script del carrusel de productos - VERSIÓN CORREGIDA PARA MÓVIL
+    document.addEventListener('DOMContentLoaded', function() {
+        const track = document.getElementById('productTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        const cards = Array.from(track.children);
+        
+        let currentIndex = 0;
+        let isAnimating = false;
+        let autoPlayInterval;
+        let isPaused = false;
+
+        // Configuración responsiva mejorada
+        function getCardWidth() {
+            if (window.innerWidth <= 480) return 260;
+            if (window.innerWidth <= 768) return 280;
+            return 350;
+        }
+
+        function getCardGap() {
+            if (window.innerWidth <= 480) return 15;
+            if (window.innerWidth <= 768) return 20;
+            return 30;
+        }
+
+        function getContainerPadding() {
+            if (window.innerWidth <= 480) return 20; // 10px cada lado
+            if (window.innerWidth <= 768) return 40; // 20px cada lado
+            return 120; // 60px cada lado
+        }
+
+        function getVisibleCards() {
+            const containerWidth = carouselWrapper.offsetWidth;
+            const cardWidth = getCardWidth();
+            const cardGap = getCardGap();
+            const totalCardWidth = cardWidth + cardGap;
+            return Math.max(1, Math.floor(containerWidth / totalCardWidth));
+        }
+
+        // Función para centrar el carrusel en móviles
+        function getCenterOffset() {
+            const containerWidth = carouselWrapper.offsetWidth;
+            const cardWidth = getCardWidth();
+            const visibleCards = getVisibleCards();
+            const totalVisibleWidth = visibleCards * cardWidth + (visibleCards - 1) * getCardGap();
+            return Math.max(0, (containerWidth - totalVisibleWidth) / 2);
+        }
+
+        // Clonar tarjetas para efecto infinito
+        function setupInfiniteLoop() {
+            // Limpiar clones existentes
+            track.querySelectorAll('.cloned').forEach(clone => clone.remove());
             
-            let currentIndex = 0;
-            let isAnimating = false;
-            let autoPlayInterval;
-            let isPaused = false;
-
-            // Configuración responsiva
-            function getCardWidth() {
-                if (window.innerWidth <= 480) return window.innerWidth * 0.8; // 80% del ancho de la pantalla
-                if (window.innerWidth <= 768) return 280;
-                return 350;
-            }
-
-            function getVisibleCards() {
-                const containerWidth = document.querySelector('.carousel-wrapper').offsetWidth;
-                const cardWidth = getCardWidth() + 30; // incluye gap
-                return Math.floor(containerWidth / cardWidth);
-            }
-
-            // Clonar tarjetas para efecto infinito
-            function setupInfiniteLoop() {
-                const visibleCards = getVisibleCards();
-                const clonesToAdd = Math.max(2, visibleCards + 2); // Mínimo 2 clones
-                
-                // Limpiar clones existentes
-                track.querySelectorAll('.cloned').forEach(clone => clone.remove());
-                
-                const cardGap = window.innerWidth <= 480 ? 15 : 30;
-                
-                // Clonar al final
-                for (let i = 0; i < clonesToAdd; i++) {
-                    const clone = cards[i % cards.length].cloneNode(true);
-                    clone.classList.add('cloned');
-                    clone.style.marginRight = `${cardGap}px`;
-                    track.appendChild(clone);
-                }
-                
-                // Clonar al inicio
-                for (let i = clonesToAdd - 1; i >= 0; i--) {
-                    const clone = cards[(cards.length - 1 - i + cards.length) % cards.length].cloneNode(true);
-                    clone.classList.add('cloned');
-                    clone.style.marginRight = `${cardGap}px`;
-                    track.insertBefore(clone, track.firstChild);
-                }
-                
-                // Ajustar el ancho del track para que quepan todos los productos
-                const cardWidth = getCardWidth();
-                const totalCards = cards.length + (clonesToAdd * 2);
-                track.style.width = `${(cardWidth + cardGap) * totalCards}px`;
-                
-                // Posicionar en el primer producto real
-                currentIndex = clonesToAdd;
-                updateTrackPosition(false);
-                
-                // Asegurar que las tarjetas tengan el ancho correcto
-                document.querySelectorAll('.product-card').forEach(card => {
-                    card.style.width = `${cardWidth}px`;
-                    card.style.flexShrink = '0';
-                });
-            }
-
-            // Actualizar posición del track
-            function updateTrackPosition(smooth = true) {
-                const cardWidth = getCardWidth();
-                const cardGap = window.innerWidth <= 480 ? 15 : 30;
-                const translateX = -((cardWidth + cardGap) * currentIndex);
-                
-                track.style.transition = smooth ? 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
-                track.style.transform = `translateX(${translateX}px)`;
-                
-                // Forzar repintado para asegurar que la transición se aplique
-                void track.offsetWidth;
-            }
-
-            // Ir al siguiente producto
-            function goToNext() {
-                if (isAnimating) return;
-                isAnimating = true;
-                
-                currentIndex++;
-                updateTrackPosition();
-                
-                setTimeout(() => {
-                    const totalClones = getVisibleCards() + 2;
-                    if (currentIndex >= cards.length + totalClones) {
-                        currentIndex = totalClones;
-                        updateTrackPosition(false);
-                    }
-                    isAnimating = false;
-                }, 600);
-            }
-
-            // Ir al producto anterior
-            function goToPrev() {
-                if (isAnimating) return;
-                isAnimating = true;
-                
-                currentIndex--;
-                updateTrackPosition();
-                
-                setTimeout(() => {
-                    const totalClones = getVisibleCards() + 2;
-                    if (currentIndex < totalClones) {
-                        currentIndex = cards.length + totalClones - 1;
-                        updateTrackPosition(false);
-                    }
-                    isAnimating = false;
-                }, 600);
-            }
-
-            // Auto-play
-            function startAutoPlay() {
-                autoPlayInterval = setInterval(() => {
-                    if (!isPaused) {
-                        goToNext();
-                    }
-                }, 4000);
-            }
-
-            function stopAutoPlay() {
-                clearInterval(autoPlayInterval);
-            }
-
-            // Event listeners
-            nextBtn.addEventListener('click', () => {
-                goToNext();
-                stopAutoPlay();
-                setTimeout(startAutoPlay, 10000);
+            const cardWidth = getCardWidth();
+            const cardGap = getCardGap();
+            const clonesToAdd = cards.length; // Clonar todos los productos
+            
+            // Aplicar estilos a las tarjetas originales
+            cards.forEach(card => {
+                card.style.width = `${cardWidth}px`;
+                card.style.flexShrink = '0';
             });
+            
+            // Clonar al final
+            for (let i = 0; i < clonesToAdd; i++) {
+                const clone = cards[i].cloneNode(true);
+                clone.classList.add('cloned');
+                clone.style.width = `${cardWidth}px`;
+                clone.style.flexShrink = '0';
+                track.appendChild(clone);
+            }
+            
+            // Clonar al inicio
+            for (let i = clonesToAdd - 1; i >= 0; i--) {
+                const clone = cards[i].cloneNode(true);
+                clone.classList.add('cloned');
+                clone.style.width = `${cardWidth}px`;
+                clone.style.flexShrink = '0';
+                track.insertBefore(clone, track.firstChild);
+            }
+            
+            // Configurar el gap del track
+            track.style.gap = `${cardGap}px`;
+            
+            // Posicionar en el primer producto real (después de los clones iniciales)
+            currentIndex = clonesToAdd;
+            updateTrackPosition(false);
+        }
 
-            prevBtn.addEventListener('click', () => {
-                goToPrev();
-                stopAutoPlay();
-                setTimeout(startAutoPlay, 10000);
-            });
+        // Actualizar posición del track - MEJORADO PARA MÓVIL
+        function updateTrackPosition(smooth = true) {
+            const cardWidth = getCardWidth();
+            const cardGap = getCardGap();
+            const centerOffset = getCenterOffset();
+            
+            // Calcular la posición centrada
+            let translateX = -((cardWidth + cardGap) * currentIndex) + centerOffset;
+            
+            track.style.transition = smooth ? 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
+            track.style.transform = `translateX(${translateX}px)`;
+        }
 
-            // Pausar en hover
+        // Ir al siguiente producto
+        function goToNext() {
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            currentIndex++;
+            updateTrackPosition();
+            
+            setTimeout(() => {
+                // Verificar si necesitamos hacer el loop infinito
+                if (currentIndex >= cards.length + cards.length) {
+                    currentIndex = cards.length;
+                    updateTrackPosition(false);
+                }
+                isAnimating = false;
+            }, 600);
+        }
+
+        // Ir al producto anterior
+        function goToPrev() {
+            if (isAnimating) return;
+            isAnimating = true;
+            
+            currentIndex--;
+            updateTrackPosition();
+            
+            setTimeout(() => {
+                // Verificar si necesitamos hacer el loop infinito
+                if (currentIndex < cards.length) {
+                    currentIndex = cards.length + cards.length - 1;
+                    updateTrackPosition(false);
+                }
+                isAnimating = false;
+            }, 600);
+        }
+
+        // Auto-play
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                if (!isPaused) {
+                    goToNext();
+                }
+            }, 4000);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', () => {
+            goToNext();
+            stopAutoPlay();
+            setTimeout(startAutoPlay, 10000);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            goToPrev();
+            stopAutoPlay();
+            setTimeout(startAutoPlay, 10000);
+        });
+
+        // Pausar en hover (solo en desktop)
+        if (window.innerWidth > 768) {
             track.addEventListener('mouseenter', () => isPaused = true);
             track.addEventListener('mouseleave', () => isPaused = false);
             
@@ -1035,45 +1059,53 @@
                 btn.addEventListener('mouseenter', () => isPaused = true);
                 btn.addEventListener('mouseleave', () => isPaused = false);
             });
+        }
 
-            // Botón de cotización
-            document.querySelector('.quote-button').addEventListener('click', () => {
-                window.open('https://wa.me/523311234567?text=Hola,%20me%20interesa%20cotizar%20sus%20productos', '_blank');
-            });
+        // Botón de cotización
+        document.querySelector('.quote-button').addEventListener('click', () => {
+            window.open('https://wa.me/523311234567?text=Hola,%20me%20interesa%20cotizar%20sus%20productos', '_blank');
+        });
 
-            // Inicialización y manejo de resize
-            function init() {
-                // Forzar recálculo en móviles
-                if (window.innerWidth <= 480) {
-                    document.documentElement.style.setProperty('--card-gap', '15px');
-                }
+        // Inicialización
+        function init() {
+            setupInfiniteLoop();
+            startAutoPlay();
+            
+            // Asegurar posición correcta después de la carga
+            setTimeout(() => {
+                updateTrackPosition(false);
+            }, 100);
+        }
+
+        // Manejo de resize mejorado
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            stopAutoPlay();
+            isAnimating = true; // Prevenir animaciones durante resize
+            
+            resizeTimer = setTimeout(() => {
                 setupInfiniteLoop();
+                isAnimating = false;
                 startAutoPlay();
-                
-                // Asegurar que se muestre correctamente después de cargar todo
+            }, 250);
+        });
+
+        // Inicializar
+        init();
+
+        // Corrección adicional para asegurar centrado en móviles
+        if (window.innerWidth <= 768) {
+            window.addEventListener('load', () => {
                 setTimeout(() => {
                     updateTrackPosition(false);
-                }, 100);
-            }
-
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                stopAutoPlay();
-                resizeTimer = setTimeout(() => {
-                    if (window.innerWidth <= 480) {
-                        document.documentElement.style.setProperty('--card-gap', '15px');
-                    } else {
-                        document.documentElement.style.setProperty('--card-gap', '30px');
-                    }
-                    setupInfiniteLoop();
-                    startAutoPlay();
-                }, 250);
+                }, 200);
             });
+        }
+    });
+</script>
+     
 
-            init();
-        });
-    </script>
      
 
 

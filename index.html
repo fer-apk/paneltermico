@@ -125,6 +125,26 @@
         .catalog-btn:active {
             transform: translateY(2px);
         }
+
+
+        .logo img {
+    height: auto;       /* para que no se deforme */
+    max-height: 60px;   /* tamaño máximo en pantallas grandes */
+    max-width: 100%;    /* nunca se salga del contenedor */
+}
+@media (max-width: 768px) {
+    .logo img {
+        max-height: 40px; /* un poco más pequeño en tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-height: 30px; /* más pequeño en celulares */
+    }
+}
+
+
         /* Contenido principal */
         .main-content {
             max-width: 900px;
@@ -246,8 +266,8 @@
         }
 
         .floating-button {
-            width: 30px;
-            height: 30px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -259,6 +279,7 @@
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             position: relative;
             overflow: hidden;
+            z-index: 1000;
         }
 
         .floating-button::before {
@@ -516,13 +537,13 @@
             </p>
 
             <div class="contact-buttons">
-                <a href="https://wa.me/523311234567" class="contact-btn whatsapp-btn">
+                <a href="https://wa.me/523319590140" class="contact-btn whatsapp-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.479 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.293-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.964-.941 1.162-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.151-.173.198-.298.298-.497.099-.198.05-.373-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.198 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
                     </svg>
                     WHATSAPP
                 </a>
-                <a href="tel:+523311234567" class="contact-btn call-btn">
+                <a href="tel:+523319590140" class="contact-btn call-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="34" height="24" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
                         <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
                     </svg>
@@ -534,13 +555,13 @@
 
     <!-- Botones flotantes para móvil -->
     <div class="floating-buttons">
-        <a href="https://wa.me/523311234567" class="contact-btn whatsapp-btn">
+        <a href="https://wa.me/523319590140" class="contact-btn whatsapp-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="44" height="34" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.479 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.293-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.964-.941 1.162-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.151-.173.198-.298.298-.497.099-.198.05-.373-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.198 5.076 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
             </svg>
             
         </a>
-        <a href="tel:+523311234567" class="contact-btn call-btn">
+        <a href="tel:+523319590140" class="contact-btn call-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="44" height="34" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
                 <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
             </svg>
@@ -794,7 +815,7 @@
 
         <!-- Botón de cotización -->
         <div class="quote-button-container">
-            <button class="quote-button">COTIZA AHORA</button>
+            <a href="https://wa.me/523319590140" class="quote-button">COTIZA AHORA</a>
         </div>
     </div>
 </section>
@@ -1178,26 +1199,7 @@
             }
         });
 
-        // Botón de cotización
-        document.querySelector('.quote-button').addEventListener('click', () => {
-            // Aquí puedes agregar tu lógica de WhatsApp o formulario
-            alert('¡Funcionalidad de cotización! Redirigiendo a WhatsApp o formulario...');
-        });
-
-        // Optimización para rendimiento
-        track.addEventListener('animationiteration', () => {
-            // Se puede usar este evento para hacer ajustes si es necesario
-            console.log('Loop completado - carrusel funcionando perfectamente');
-        });
-
-        // Manejo de visibilidad para pausar cuando no está visible
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                track.style.animationPlayState = 'paused';
-            } else if (!isPaused) {
-                track.style.animationPlayState = 'running';
-            }
-        });
+     
     });
 </script>
 
@@ -1245,6 +1247,16 @@
         .header-image img {
             max-width: 350px;
             height: auto;
+        }
+        @media (max-width: 768px) {
+            .header-image img {
+                max-width: 250px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header-image img {
+                max-width: 220px;
+            }
         }
     </style>
 
@@ -2460,7 +2472,7 @@
 
 
 
-  <!-- Sección de confianza y beneficios -->
+  <!-- +500 clientes satisfechos en jalisco y alrededores -->
   <section class="trust-section">
     <div class="trust-container">
         <!-- Lado izquierdo: Carrusel de imágenes -->
@@ -2502,7 +2514,7 @@
                     <span class="highlight-number" style="color: #FF5517;">+500 clientes satisfechos en<br>Jalisco y alrededores</span>
                 </h2>
                 <button class="cta-button">
-                    SOLICITA TU<br>COTIZACIÓN HOY
+                    <a href="https://wa.me/523319590140" class="cta-button">SOLICITA TU COTIZACIÓN HOY</a>
                 </button>
             </div>
 
@@ -2822,7 +2834,8 @@
         }
         
         .image-carousel {
-            height: 250px;
+            height: 350px;
+            width: 300px;
             border-radius: 15px;
         }
         
@@ -2998,7 +3011,7 @@
                         <p class="dudas-slide-description">
                             Es adecuado para ser utilizado en construcción industrial, zootécnica y residencial.
                         </p>
-                        <a href="#" class="dudas-contact-button">CONTACTAR UN ASESOR</a>
+                        <a href="https://wa.me/523319590140" class="dudas-contact-button">CONTACTAR UN ASESOR</a>
                     </div>
                     <div class="dudas-panel-visual">
                         <img src="images/6taParteTienesdudas/Isocindu_Isocop_4.webp" alt="Panel Isocop 4" class="dudas-panel-image">
@@ -3012,7 +3025,7 @@
                         <p class="dudas-slide-description">
                             Es ideal para almacenes de alimentos, centros comerciales, oficinas móviles y aulas.
                         </p>
-                        <a href="#" class="dudas-contact-button">CONTACTAR UN ASESOR</a>
+                        <a href="https://wa.me/523319590140" class="dudas-contact-button">CONTACTAR UN ASESOR</a>
                     </div>
                     <div class="dudas-panel-visual">
                         <img src="images/6taParteTienesdudas/Ternium_Galvatecho.webp" alt="Panel Galvatecho" class="dudas-panel-image">
@@ -3025,7 +3038,7 @@
                         <h3 class="dudas-slide-title">ECONOMURO</h3>
                         <p class="dudas-slide-description"> 
                             Utilizado en muros, fachadas o plafones de construcciones que requieran buena capacidad de aislamiento térmico y estructural     
-                            <a href="#" class="dudas-contact-button">CONTACTAR UN ASESOR</a>
+                            <a href="https://wa.me/523319590140" class="dudas-contact-button">CONTACTAR UN ASESOR</a>
                         </p>
                     </div>
                     <div class="dudas-panel-visual">
@@ -3040,7 +3053,7 @@
                         <p class="dudas-slide-description">
                             Es ideal para cumplir con altos requerimientos térmicos, acústicos, estructurales y de desagüe, su manejo e instalación es fácil y rápido.
                         </p>
-                        <a href="#" class="dudas-contact-button">CONTACTAR UN ASESOR</a>
+                        <a href="https://wa.me/523319590140" class="dudas-contact-button">CONTACTAR UN ASESOR</a>
                     </div>
                     <div class="dudas-panel-visual">
                         <img src="images/6taParteTienesdudas/Ternium_Econotecho.webp" alt="Panel Econotecho" class="dudas-panel-image">
@@ -3061,7 +3074,7 @@
         </div>
 
         <div class="dudas-main-contact-section">
-            <a href="#" class="dudas-main-contact-button" onclick="contactWhatsApp()">
+            <a href="https://wa.me/523319590140" class="dudas-main-contact-button" onclick="contactWhatsApp()">
                 CONTACTAR UN ASESOR
             </a>
         </div>

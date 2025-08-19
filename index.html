@@ -19,7 +19,7 @@
 
         /* Barra naranja superior con texto deslizante */
         .top-bar {
-            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            background: linear-gradient(135deg,  #ff6900,  #ff6900);
             height: 60px;
             width: 100%;
             display: flex;
@@ -118,7 +118,7 @@
 
         .catalog-btn:hover {
             background: rgba(255, 255, 255, 0.2);
-            border-color: #ff6b35;
+            border-color: #ff6900;
             transform: translateY(-2px);
         }
 
@@ -140,7 +140,7 @@
         .counter {
             font-size: 28px;
             font-weight: bold;
-            color: #ff6b35;
+            color: #ff6900;
             display: inline-block;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
@@ -157,17 +157,17 @@
         }
 
         .main-title .highlight {
-            color: #ff6b35;
+            color: #ff6900;
             animation: subtleGlow 3s ease-in-out infinite alternate;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         @keyframes subtleGlow {
             from {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 5px #ff6b35;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 5px #ff6900;
             }
             to {
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 15px #ff6b35, 0 0 20px rgba(255, 107, 53, 0.3);
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5), 0 0 15px #ff6900, 0 0 20px rgba(255, 107, 53, 0.3);
             }
         }
 
@@ -226,7 +226,7 @@
         }
 
         .call-btn:hover {
-            background: #ff8c00;
+            background: #ff6900;
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(255, 165, 0, 0.3);
         }
@@ -279,7 +279,7 @@
         }
 
         .floating-button.call {
-            background: linear-gradient(135deg, #FFA500, #FF8C00);
+            background: linear-gradient(135deg, #FFA500, #ff6900);
             animation: float 3s ease-in-out infinite 1.5s;
         }
 
@@ -316,7 +316,7 @@
         }
 
         .floating-button.call::after {
-            border-color: #FFA500;
+            border-color: #ff6900;
         }
 
         @keyframes pulse {
@@ -453,7 +453,7 @@
         /* Animación de escritura para el texto */
         .typing-text {
             overflow: hidden;
-            border-right: 3px solid #ff6b35;
+            border-right: 3px solid #ff6900;
             white-space: nowrap;
             animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
         }
@@ -472,7 +472,7 @@
                 border-color: transparent;
             }
             50% {
-                border-color: #ff6b35;
+                border-color: #ff6900;
             }
         }
     </style>
@@ -916,31 +916,31 @@
 
     /* Fondos específicos para cada producto */
     .fanosa-bg {
-        background: linear-gradient(135deg, #e8f5e8, #d4edda);
+        background: linear-gradient(135deg,#b6e3d4, #b6e3d4);
     }
 
     .isocop-bg {
-        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        background: linear-gradient(135deg, #b6e3d4, #b6e3d4);
     }
 
     .multytecho-bg {
-        background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+        background: linear-gradient(135deg, #b6e3d4, #b6e3d4);
     }
 
     .acrylit-bg {
-        background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+        background: linear-gradient(135deg, #b6e3d4, #b6e3d4);
     }
 
     .colch-bg {
-        background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+        background: linear-gradient(135deg, #b6e3d4, #b6e3d4);
     }
 
     .galvatecho-bg {
-        background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+        background: linear-gradient(135deg, #b6e3d4, #b6e3d4);
     }
 
     .economuro-bg {
-        background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+        background: linear-gradient(135deg, #b6e3d4, #b6e3d4);
     }
 
     .product-image-container img {
@@ -1188,626 +1188,7 @@
 
 
 
-     
     
-     <!-- RESEÑAS -->
-<section style="overflow: hidden; margin-bottom: 80px; background-color: #001F3F; padding: 40px 0;">
-    <div class="carousel-container">
-      <h1 style="font-size: 2.5rem; margin: 0 0 2rem 0;">Lo que nuestros clientes dicen</h1>
-      <div class="carousel-wrapper">
-        <button class="carousel-nav prev" onclick="pauseAndResume()" aria-label="Diapositiva anterior">
-          <svg viewBox="0 0 24 24">
-            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/>
-          </svg>
-        </button>
-        <div class="carousel-track">
-            
-       
-          <!-- Reseña 1 -->
-          <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-            </div>
-            <div class="review-text">
-                "Excelente servicio al cliente. El equipo fue muy profesional y resolvió todas mis dudas de manera clara y rápida. Definitivamente recomiendo esta empresa."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-purple">M</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">María González</div>
-                    <div class="reviewer-meta">Verificado • hace 2 semanas</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <!-- Reseña 2 -->
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-            </div>
-            <div class="review-text">
-                "Una experiencia increíble desde el primer contacto. La calidad del trabajo superó mis expectativas y el precio fue muy justo."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-blue">C</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">Carlos Rodríguez</div>
-                    <div class="reviewer-meta">Verificado • hace 1 mes</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <!-- Reseña 3 -->
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-            </div>
-            <div class="review-text">
-                "Me encantó trabajar con este equipo. Son muy creativos y atentos a los detalles. El resultado final fue exactamente lo que buscaba."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-green">A</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">Ana Martínez</div>
-                    <div class="reviewer-meta">Verificado • hace 3 semanas</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <!-- Reseña 4 -->
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star empty">★</span>
-            </div>
-            <div class="review-text">
-                "Muy buen servicio en general. La comunicación fue fluida y cumplieron con los tiempos acordados. Solo una pequeña demora al final."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-orange">L</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">Luis Hernández</div>
-                    <div class="reviewer-meta">Verificado • hace 5 días</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <!-- Reseña 5 -->
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-            </div>
-            <div class="review-text">
-                "Fantástico desde el primer momento. El equipo es muy profesional y los resultados hablan por sí solos. Volveré a trabajar con ellos sin duda."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-red">S</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">Sofía López</div>
-                    <div class="reviewer-meta">Verificado • hace 1 semana</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <!-- Reseña 6 -->
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-            </div>
-            <div class="review-text">
-                "Superaron todas mis expectativas. La atención personalizada y la calidad del trabajo son excepcionales. Altamente recomendado."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-teal">R</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">Roberto Silva</div>
-                    <div class="reviewer-meta">Verificado • hace 4 días</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <!-- Reseña 7 -->
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star empty">★</span>
-            </div>
-            <div class="review-text">
-                "Muy contenta con el resultado. El proceso fue transparente y siempre estuvieron disponibles para resolver mis consultas."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-pink">P</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">Patricia Morales</div>
-                    <div class="reviewer-meta">Verificado • hace 2 meses</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <!-- Reseña 8 -->
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-            </div>
-            <div class="review-text">
-                "Increíble experiencia de principio a fin. Su profesionalismo y dedicación se notan en cada detalle del trabajo realizado."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-indigo">J</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">Javier Ruiz</div>
-                    <div class="reviewer-meta">Verificado • hace 3 días</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <!-- Duplicar las reseñas para el scroll infinito -->
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-            </div>
-            <div class="review-text">
-                "Excelente servicio al cliente. El equipo fue muy profesional y resolvió todas mis dudas de manera clara y rápida. Definitivamente recomiendo esta empresa."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-purple">M</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">María González</div>
-                    <div class="reviewer-meta">Verificado • hace 2 semanas</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-            </div>
-            <div class="review-text">
-                "Una experiencia increíble desde el primer contacto. La calidad del trabajo superó mis expectativas y el precio fue muy justo."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-blue">C</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">Carlos Rodríguez</div>
-                    <div class="reviewer-meta">Verificado • hace 1 mes</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-            </div>
-            <div class="review-text">
-                "Me encantó trabajar con este equipo. Son muy creativos y atentos a los detalles. El resultado final fue exactamente lo que buscaba."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-green">A</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">Ana Martínez</div>
-                    <div class="reviewer-meta">Verificado • hace 3 semanas</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-
-        <div class="review-card">
-            <div class="stars">
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star filled">★</span>
-                <span class="star empty">★</span>
-            </div>
-            <div class="review-text">
-                "Muy buen servicio en general. La comunicación fue fluida y cumplieron con los tiempos acordados. Solo una pequeña demora al final."
-            </div>
-            <div class="reviewer-info">
-                <div class="reviewer-avatar avatar-orange">L</div>
-                <div class="reviewer-details">
-                    <div class="reviewer-name">Luis Hernández</div>
-                    <div class="reviewer-meta">Verificado • hace 5 días</div>
-                </div>
-                <svg class="google-icon" viewBox="0 0 24 24">
-                    <path fill="#4285f4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34a853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#fbbc05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#ea4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-            </div>
-        </div>
-    </div>
-
-  </section>
-
-  <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-   
-
-    .carousel-container {
-        max-width: 2000px;
-        margin: 0 auto;
-        position: relative;
-    }
-
-    h1 {
-        font-size: 50px;
-        font-weight: 400;
-        color: #FFFFFF; /* Changed to white for better contrast */
-        margin-bottom: 30px;
-        text-align: center;
-        margin-top: 50px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-size: 2rem;
-        text-align: center;
-        margin-bottom: 30px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Added subtle text shadow for better readability */
-    }
-
-    .carousel-wrapper {
-        position: relative;
-        overflow: hidden;
-        border-radius: 16px;
-        background: white;
-        padding: 20px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .carousel-track {
-        display: flex;
-        gap: 20px;
-        animation: infiniteScroll 45s linear infinite;
-        width: calc(280px * 18 + 20px * 17); /* 9 cards * 2 + gaps */
-    }
-
-    .carousel-track:hover {
-        animation-play-state: paused;
-    }
-
-    .carousel-track.paused {
-        animation-play-state: paused;
-    }
-
-    @keyframes infiniteScroll {
-        0% {
-            transform: translateX(0);
-        }
-        100% {
-            transform: translateX(calc(-280px * 9 - 20px * 8)); /* Width of original 9 cards + gaps */
-        }
-    }
-
-    .review-card {
-        min-width: 280px;
-        max-width: 280px;
-        background: white;
-        border-radius: 12px;
-        padding: 25px 20px;
-        border: 1px solid #e8eaed;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        flex-shrink: 0;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        margin: 10px 0;
-    }
-
-    .review-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    }
-
-    .stars {
-        display: flex;
-        margin-bottom: 15px;
-        gap: 2px;
-    }
-
-    .star {
-        width: 16px;
-        height: 16px;
-        font-size: 16px;
-    }
-
-    .star.filled {
-        color: #fbbc04;
-    }
-
-    .star.empty {
-        color: #e0e0e0;
-    }
-
-    .review-text {
-        font-size: 14px;
-        line-height: 1.5;
-        color: #3c4043;
-        margin-bottom: 15px;
-        min-height: 60px;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .reviewer-info {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .reviewer-avatar {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 500;
-        font-size: 14px;
-        flex-shrink: 0;
-    }
-
-    .reviewer-details {
-        flex: 1;
-        min-width: 0;
-    }
-
-    .reviewer-name {
-        font-size: 14px;
-        font-weight: 500;
-        color: #3c4043;
-        margin-bottom: 2px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .reviewer-meta {
-        font-size: 12px;
-        color: #70757a;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .google-icon {
-        width: 16px;
-        height: 16px;
-        flex-shrink: 0;
-    }
-
-    .carousel-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
-        background: rgb(40, 5, 167);
-        border: 1px solid #023292;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        transition: all 0.2s ease;
-        z-index: 10;
-    }
-
-    .carousel-nav:hover {
-        background: #04417d;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        border-color: #1a73e8;
-    }
-
-    .carousel-nav.prev {
-        left: -60px;
-    }
-
-    .carousel-nav.next {
-        right: -60px;
-    }
-
-    .carousel-nav svg {
-        width: 20px;
-        height: 20px;
-        fill: #5f6368;
-        transition: fill 0.2s ease;
-    }
-
-    .carousel-nav:hover svg {
-        fill: #1a73e8;
-    }
-
-    /* Avatares con colores */
-    .avatar-purple { background: linear-gradient(135deg, #9c27b0, #e91e63); }
-    .avatar-red { background: linear-gradient(135deg, #f44336, #ff5722); }
-    .avatar-orange { background: linear-gradient(135deg, #ff9800, #ff5722); }
-    .avatar-blue { background: linear-gradient(135deg, #2196f3, #3f51b5); }
-    .avatar-green { background: linear-gradient(135deg, #4caf50, #8bc34a); }
-
-    /* Control de pausa */
-    .pause-control {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: rgba(17, 0, 201, 0.9);
-        border: 1px solid #e0e0e0;
-        border-radius: 20px;
-        padding: 8px 12px;
-        font-size: 12px;
-        color: #666;
-        cursor: pointer;
-        transition: all 0.2s ease;
-    }
-
-    .pause-control:hover {
-        background: rgb(10, 23, 201);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-        .carousel-container {
-            padding: 0 10px;
-        }
-        
-        .carousel-nav {
-            display: none;
-        }
-        
-        .review-card {
-            min-width: 260px;
-            max-width: 260px;
-        }
-        
-        @keyframes infiniteScroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-260px * 9 - 20px * 8));
-            }
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .review-card {
-            min-width: 240px;
-            max-width: 240px;
-            padding: 16px;
-        }
-
-        .carousel-wrapper {
-            padding: 15px;
-        }
-    }
- </style>
-
-
-
-
-
-
-
 
 
 
@@ -2553,6 +1934,271 @@
             align-items: center;
         }
     }
+    
+    .carousel-container {
+        max-width: 2000px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: 400;
+        color: #FFFFFF; /* Changed to white for better contrast */
+        margin-bottom: 30px;
+        text-align: center;
+        margin-top: 50px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Added subtle text shadow for better readability */
+    }
+
+    .carousel-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 20px;
+        animation: infiniteScroll 45s linear infinite;
+        width: calc(280px * 18 + 20px * 17); /* 9 cards * 2 + gaps */
+    }
+
+    .carousel-track:hover {
+        animation-play-state: paused;
+    }
+
+    .carousel-track.paused {
+        animation-play-state: paused;
+    }
+
+    @keyframes infiniteScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-280px * 9 - 20px * 8)); /* Width of original 9 cards + gaps */
+        }
+    }
+
+    .review-card {
+        min-width: 280px;
+        max-width: 280px;
+        background: white;
+        border-radius: 12px;
+        padding: 25px 20px;
+        border: 1px solid #e8eaed;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        flex-shrink: 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin: 10px 0;
+    }
+
+    .review-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .stars {
+        display: flex;
+        margin-bottom: 15px;
+        gap: 2px;
+    }
+
+    .star {
+        width: 16px;
+        height: 16px;
+        font-size: 16px;
+    }
+
+    .star.filled {
+        color: #fbbc04;
+    }
+
+    .star.empty {
+        color: #e0e0e0;
+    }
+
+    .review-text {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #3c4043;
+        margin-bottom: 15px;
+        min-height: 60px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .reviewer-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .reviewer-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 500;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+
+    .reviewer-details {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .reviewer-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: #3c4043;
+        margin-bottom: 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .reviewer-meta {
+        font-size: 12px;
+        color: #70757a;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .google-icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+
+    .carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        background: rgb(40, 5, 167);
+        border: 1px solid #023292;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: all 0.2s ease;
+        z-index: 10;
+    }
+
+    .carousel-nav:hover {
+        background: #04417d;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-color: #1a73e8;
+    }
+
+    .carousel-nav.prev {
+        left: -60px;
+    }
+
+    .carousel-nav.next {
+        right: -60px;
+    }
+
+    .carousel-nav svg {
+        width: 20px;
+        height: 20px;
+        fill: #5f6368;
+        transition: fill 0.2s ease;
+    }
+
+    .carousel-nav:hover svg {
+        fill: #1a73e8;
+    }
+
+    /* Avatares con colores */
+    .avatar-purple { background: linear-gradient(135deg, #9c27b0, #e91e63); }
+    .avatar-red { background: linear-gradient(135deg, #f44336, #ff5722); }
+    .avatar-orange { background: linear-gradient(135deg, #ff9800, #ff5722); }
+    .avatar-blue { background: linear-gradient(135deg, #2196f3, #3f51b5); }
+    .avatar-green { background: linear-gradient(135deg, #4caf50, #8bc34a); }
+
+    /* Control de pausa */
+    .pause-control {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(17, 0, 201, 0.9);
+        border: 1px solid #e0e0e0;
+        border-radius: 20px;
+        padding: 8px 12px;
+        font-size: 12px;
+        color: #666;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .pause-control:hover {
+        background: rgb(10, 23, 201);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .carousel-container {
+            padding: 0 10px;
+        }
+        
+        .carousel-nav {
+            display: none;
+        }
+        
+        .review-card {
+            min-width: 260px;
+            max-width: 260px;
+        }
+        
+        @keyframes infiniteScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-260px * 9 - 20px * 8));
+            }
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .review-card {
+            min-width: 240px;
+            max-width: 240px;
+            padding: 16px;
+        }
+
+        .carousel-wrapper {
+            padding: 15px;
+        }
+    }
 </style>
 
 <script>
@@ -2578,8 +2224,34 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- Carrusel de proveedores -->
- <section class="marcas-carousel" style="background-color: #f9f9f9; padding: 1.5rem 0; margin: 0; overflow: hidden;">
+ <section class="marcas-carousel" style="background-color: #b6e3d4; padding: 1.5rem 0; margin: 0; overflow: hidden;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
       <div class="marcas-track" style="display: flex; align-items: center; justify-content: space-around; animation: scroll 20s linear infinite; width: calc(250px * 10);">
         <!-- Logos de proveedores - se duplican para el efecto de scroll infinito -->
@@ -2673,7 +2345,7 @@
             <div class="image-carousel">
                 <div class="carousel-images" id="imageCarousel">
                     <div class="carousel-slide active">
-                        <img src="images/5taParteClientesSatisfechos/Nave industrial_multipanel_guadalajara 1.webp" alt="Nave industrial multipanel">
+                        <img src="images/5taParteClientesSatisfechos/Nave_Industrial_multypanel.webp" alt="Nave industrial multipanel">
                     </div>
                     <div class="carousel-slide">
                         <img src="images/5taParteClientesSatisfechos/Nave_Industrial_de_Multymuro_y_Multypanel.webp" alt="Nave Industrial multymuro y multypanel">
@@ -2704,7 +2376,7 @@
         <div class="trust-right">
             <div class="trust-header">
                 <h2 class="trust-title"> 
-                    <span class="highlight-number" style="color: #e65100;">+500 clientes satisfechos en<br>Jalisco y alrededores</span>
+                    <span class="highlight-number" style="color: #ff6900;">+500 clientes satisfechos en<br>Jalisco y alrededores</span>
                 </h2>
                 <button class="cta-button">
                     SOLICITA TU<br>COTIZACIÓN HOY
@@ -2819,7 +2491,7 @@
     }
 
     .indicator.active {
-        background: #ff6b35;
+        background: #ff6900;
         transform: scale(1.2);
     }
 
@@ -2848,7 +2520,7 @@
     }
 
     .highlight-number {
-        color: #ff6b35;
+        color: #ff6900;
         font-size: 3.5rem;
         font-weight: 900;
         display: inline-block;
@@ -2863,7 +2535,7 @@
     }
 
     .cta-button {
-        background: linear-gradient(135deg, #ff6b35, #ff8c42);
+        background: linear-gradient(135deg, #ff6900, #ff8c42);
         color: white;
         border: none;
         padding: 20px 35px;
@@ -2882,7 +2554,7 @@
     .cta-button:hover {
         transform: translateY(-3px) scale(1.02);
         box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
-        background: linear-gradient(135deg, #ff5722, #ff6b35);
+        background: linear-gradient(135deg, #ff5722, #ff6900);
     }
 
     .trust-description {
@@ -3323,7 +2995,7 @@
     #dudas-section .dudas-slide {
         width: 20%;
         min-height: 500px;
-        background: linear-gradient(135deg, #FF4500, #FF6B35);
+        background: linear-gradient(135deg, #ff6900, #ff6900);
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -3395,7 +3067,7 @@
     }
 
     #dudas-section .dudas-nav-dot.active {
-        background: #FF4500;
+        background: #ff6900;
         transform: scale(1.2);
     }
 
@@ -3410,7 +3082,7 @@
         border-radius: 50%;
         cursor: pointer;
         font-size: 1.5rem;
-        color: #FF4500;
+        color: #ff6900;
         transition: all 0.3s ease;
         z-index: 3;
     }
@@ -3431,8 +3103,8 @@
     #dudas-section .dudas-contact-button {
         display: inline-block;
         padding: 15px 30px;
-        background: white;
-        color: #FF4500;
+        background: #ff6900;
+        color: white;
         text-decoration: none;
         border: 3px solid white;
         border-radius: 50px;
@@ -3482,11 +3154,11 @@
     }
 
     /* Fondos específicos para cada slide */
-    #dudas-section .slide-1 { background: linear-gradient(135deg, #FF4500, #FF6B35); }
-    #dudas-section .slide-2 { background: linear-gradient(135deg, #3498db, #2980b9); }
-    #dudas-section .slide-3 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
-    #dudas-section .slide-4 { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
-    #dudas-section .slide-5 { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+    #dudas-section .slide-1 { background: linear-gradient(135deg, #ff6900, #ff6900); }
+    #dudas-section .slide-2 { background: linear-gradient(135deg, #ff6900, #ff6900); }
+    #dudas-section .slide-3 { background: linear-gradient(135deg, #ff6900, #ff6900); }
+    #dudas-section .slide-4 { background: linear-gradient(135deg, #ff6900, #ff6900); }
+    #dudas-section .slide-5 { background: linear-gradient(135deg, #ff6900, #ff6900); }
 
     /* Responsive design */
     @media (max-width: 768px) {

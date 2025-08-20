@@ -387,14 +387,7 @@
                 font-size: 2.5rem;
             }
             
-            /* Ocultar botones del header en móvil */
-            .contact-buttons {
-                width: 20px;
-                height: 20px;
-                position: absolute;
-                top: 490px;
-                left: 150px;
-            }
+            
             
             /* Mostrar botones flotantes en móvil */
             .floating-buttons {
@@ -512,6 +505,48 @@
                 border-color: #ff5517;
             }
         }
+        /* Enlace de teléfono que sustituye a los botones en móvil */
+.contact-inline-phone {
+    display: none ;                  /* oculto por defecto (desktop) */
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: 2px solid #ff5517;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    align-items: center;
+    gap: 10px;
+}
+.contact-inline-phone::before{
+    content: "📞";
+    line-height: 1;
+}
+
+/* Hover (por si hay pantallas táctiles con cursor) */
+.contact-inline-phone:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 85, 23, 0.25);
+    background: rgba(255,85,23,0.15);
+}
+
+/* --- Responsive: en <=768px ocultamos los dos botones y mostramos el texto-phone --- */
+@media (max-width: 768px) {
+    /* Oculta completamente los dos botones del header */
+    .contact-buttons {
+        display: none !important;
+    }
+
+    /* Muestra el enlace telefónico en el mismo lugar del flujo */
+    .contact-inline-phone {
+        display: inline-flex;
+        margin-top: 10px;          /* ajusta si quieres separarlo del subtítulo */
+    }
+}
+
     </style>
 </head>
 <body>
@@ -563,6 +598,10 @@
                     LLAMAR
                 </a>
             </div>
+            <a href="tel:+523123123212" class="contact-inline-phone" aria-label="Llamar al 312 312 3212">
+                312 312 3212
+              </a>
+              
         </div>
     </div>
 
@@ -3098,7 +3137,7 @@ setInterval(changeText, 12000);
 <style>
     /* Estilos para la sección de dudas */
     #dudas-section {
-        background: #fff;
+        background: #ffffff;
         padding:0px 0 0px; /* Aumentamos el padding inferior para los botones */
         position: relative;
         width: 100%;
@@ -3110,7 +3149,7 @@ setInterval(changeText, 12000);
         max-width: 100%;
         margin: 0 auto;
         position: relative;
-        background: #fff;
+        background: #ffffff;
         border-radius: 20px;
         padding: 40px 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -3161,7 +3200,7 @@ setInterval(changeText, 12000);
 
     #dudas-section .dudas-slide-content {
         width: 45%;
-        color: white;
+        color: #fff;
         z-index: 2;
         position: relative;
         padding: 20px;
@@ -3309,11 +3348,11 @@ setInterval(changeText, 12000);
     }
 
     /* Fondos específicos para cada slide */
-    #dudas-section .slide-1 { background: #fff }
-    #dudas-section .slide-2 { background: #fff }
-    #dudas-section .slide-3 { background: #fff }
-    #dudas-section .slide-4 { background: #fff }
-    #dudas-section .slide-5 { background: #fff }
+    #dudas-section .slide-1 { background: #222935 }
+    #dudas-section .slide-2 { background: #222935 }
+    #dudas-section .slide-3 { background: #222935 }
+    #dudas-section .slide-4 { background: #222935 }
+    #dudas-section .slide-5 { background: #222935 }
 
     /* Responsive design */
     @media (max-width: 768px) {

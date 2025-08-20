@@ -142,6 +142,9 @@
     .logo img {
         max-height: 30px; /* más pequeño en celulares */
     }
+    .main-content {
+        padding: 0 15px;
+    }
 }
 
 
@@ -379,15 +382,18 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            
             .main-title {
                 font-size: 2.5rem;
             }
             
             /* Ocultar botones del header en móvil */
             .contact-buttons {
-                display: none;
-                width: 30px;
-                height: 30px;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 490px;
+                left: 150px;
             }
             
             /* Mostrar botones flotantes en móvil */
@@ -463,6 +469,10 @@
                 height: 5px;
                 font-size: 5px;
             }
+            .header-container {
+                height: 660px;
+               
+            }
         }
 
         /* Efectos adicionales */
@@ -508,7 +518,7 @@
     <!-- Barra naranja superior con texto deslizante -->
     <div class="top-bar">
         <div class="sliding-text" id="slidingText">
-            El mejor precio en sistemas aislantes y paneles térmico de Jalisco
+            El mejor precio en sistemas aislantes y paneles térmicos de Jalisco
         </div>
     </div>
 
@@ -605,49 +615,49 @@
 
         // Textos rotativos para la barra deslizante con animación de escritura
         const texts = [
-            "El mejor precio en sistemas aislantes y paneles térmico de Jalisco",
-            "Más de 20 años brindando soluciones térmicas de calidad",
-            "Asesoría especializada y entrega rápida garantizada",
-            "Materiales de la más alta calidad para tu proyecto"
-        ];
+    "El mejor precio en sistemas aislantes y paneles térmico de Jalisco",
+    "Más de 20 años brindando soluciones térmicas de calidad",
+    "Asesoría especializada y entrega rápida garantizada",
+    "Materiales de la más alta calidad para tu proyecto"
+];
 
-        let textIndex = 0;
+let textIndex = 0;
+let typing = false; // 👈 bandera para evitar sobreposiciones
 
-        function typeWriter(text, element, speed = 100) {
-            element.innerHTML = '';
-            let i = 0;
-            element.classList.add('typing-text');
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                } else {
-                    setTimeout(() => {
-                        element.classList.remove('typing-text');
-                    }, 1000);
-                }
-            }
-            type();
+function typeWriter(text, element, speed = 100, callback) {
+    element.innerHTML = '';
+    let i = 0;
+    typing = true;
+
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        } else {
+            typing = false;
+            if (callback) callback(); // avisa que terminó
         }
+    }
+    type();
+}
 
-        function changeText() {
-            const slidingText = document.getElementById('slidingText');
-            textIndex = (textIndex + 1) % texts.length;
-            
-            // Cambiar a animación de escritura cada 4to texto
-            if (textIndex % 4 === 0) {
-                setTimeout(() => {
-                    typeWriter(texts[textIndex], slidingText, 80);
-                }, 2000);
-            } else {
-                slidingText.textContent = texts[textIndex];
-            }
-        }
+function changeText() {
+    const slidingText = document.getElementById('slidingText');
+    if (typing) return; // 👈 evita llamar si aún está escribiendo
 
-        // Cambiar texto cada 12 segundos (sincronizado con la animación)
-        setInterval(changeText, 12000);
+    textIndex = (textIndex + 1) % texts.length;
+
+    // Cada 4to texto que sea animación
+    if (textIndex === 0) {
+        typeWriter(texts[textIndex], slidingText, 80);
+    } else {
+        slidingText.textContent = texts[textIndex];
+    }
+}
+
+// Cambia cada 12 segundos exactos para dar la vuelta completa 
+setInterval(changeText, 12000);
 
         // Mostrar/ocultar botones flotantes según el scroll (opcional)
         let lastScrollTop = 0;
@@ -3088,7 +3098,7 @@
 <style>
     /* Estilos para la sección de dudas */
     #dudas-section {
-        background: #f8f9fa;
+        background: #fff;
         padding:0px 0 0px; /* Aumentamos el padding inferior para los botones */
         position: relative;
         width: 100%;
@@ -3100,7 +3110,7 @@
         max-width: 100%;
         margin: 0 auto;
         position: relative;
-        background: white;
+        background: #fff;
         border-radius: 20px;
         padding: 40px 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -3184,6 +3194,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        background: #ff5517;
     }
 
     #dudas-section .dudas-panel-image {
@@ -3298,11 +3309,11 @@
     }
 
     /* Fondos específicos para cada slide */
-    #dudas-section .slide-1 { background: linear-gradient(135deg, #ff6900, #ff6900); }
-    #dudas-section .slide-2 { background: linear-gradient(135deg, #ff6900, #ff6900); }
-    #dudas-section .slide-3 { background: linear-gradient(135deg, #ff6900, #ff6900); }
-    #dudas-section .slide-4 { background: linear-gradient(135deg, #ff6900, #ff6900); }
-    #dudas-section .slide-5 { background: linear-gradient(135deg, #ff6900, #ff6900); }
+    #dudas-section .slide-1 { background: #fff }
+    #dudas-section .slide-2 { background: #fff }
+    #dudas-section .slide-3 { background: #fff }
+    #dudas-section .slide-4 { background: #fff }
+    #dudas-section .slide-5 { background: #fff }
 
     /* Responsive design */
     @media (max-width: 768px) {
@@ -3471,6 +3482,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
  <!-- SUCURSALES -->
  <section class="sucursales">
     <h2>Nuestras Sucursales</h2>
@@ -3479,7 +3502,7 @@
     <div class="sucursales-container">
       <!-- Pestañas de navegación -->
       <div class="sucursales-tabs">
-        <button class="tab-btn active" style="background-color: #BD3768; color: white; border: 1px solid #BD3768; padding: 10px 20px; font-weight: 600;" data-tab="panel-periferico">Panel Periférico</button>
+        <button class="tab-btn active" style="background-color: #FF5517; color: white; border: 1px solid #FF5517; padding: 10px 20px; font-weight: 600;" data-tab="panel-periferico">Panel Periférico</button>
         <button class="tab-btn" style="background-color: #f5f5f5; color: #1a1a1a; border: 1px solid #ddd; padding: 10px 20px; font-weight: 600;" data-tab="periferico">Periférico</button>
         <button class="tab-btn" style="background-color: #f5f5f5; color: #1a1a1a; border: 1px solid #ddd; padding: 10px 20px; font-weight: 600;" data-tab="juan-gil">Juan Gil Preciado</button>
         <button class="tab-btn" style="background-color: #f5f5f5; color: #1a1a1a; border: 1px solid #ddd; padding: 10px 20px; font-weight: 600;" data-tab="punto-sur">Punto Sur</button>
@@ -3493,7 +3516,7 @@
           <div class="sucursal-info">
             <h3>SUCURSAL PANEL PERIFÉRICO</h3>
             <p><i class="fas fa-map-marker-alt"></i> Av. Periférico Pte. Manuel Gómez Morin 2880<br>Paraísos del Colli CP. 45069 Zapopan, Jal.</p>
-            <p><i class="fas fa-phone"></i> <a href="tel:3319588421">33 1958 8421</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:3319590140">33 1959 0140</a></p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:ventas@lesamx.com">ventas@lesamx.com</a></p>
             <a href="https://www.google.com/maps/place/Av+Perif%C3%A9rico+Pte+Manuel+G%C3%B3mez+Morin+2880,+Para%C3%ADsos+del+Colli,+45069+Zapopan,+Jal.,+M%C3%A9xico/@20.6907,-103.4185,17z/data=!3m1!4b1!4m5!3m4!1s0x8428ae4a6f0f2f1f:0x1c9f1c9f1c9f1c9f!8m2!3d20.6907!4d-103.4185" target="_blank" class="ver-mapa">
               <i class="fas fa-map-marked-alt"></i> Ver en mapa
@@ -3509,7 +3532,7 @@
           <div class="sucursal-info">
             <h3>SUCURSAL PERIFÉRICO</h3>
             <p><i class="fas fa-map-marker-alt"></i> Av. Perif. Pte. Manuel Gómez Morin 2790-D<br>Paraísos del Colli CP. 45069 Zapopan, Jal.</p>
-            <p><i class="fas fa-phone"></i> <a href="tel:3319588421">33 1958 8421</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:3319590140">33 1959 0140</a></p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:ventas@lesamx.com">ventas@lesamx.com</a></p>
             <a href="https://www.google.com/maps/place/Av+Perif%C3%A9rico+Pte+Manuel+G%C3%B3mez+Morin+2790-D,+Para%C3%ADsos+del+Colli,+45069+Zapopan,+Jal.,+M%C3%A9xico/@20.6910,-103.4200,17z/data=!3m1!4b1!4m5!3m4!1s0x8428ae4a6f0f2f1f:0x1c9f1c9f1c9f1c9f!8m2!3d20.6910!4d-103.4200" target="_blank" class="ver-mapa">
               <i class="fas fa-map-marked-alt"></i> Ver en mapa
@@ -3525,7 +3548,7 @@
           <div class="sucursal-info">
             <h3>SUCURSAL JUAN GIL PRECIADO</h3>
             <p><i class="fas fa-map-marker-alt"></i> Lat. Juan Gil Preciado 4176<br>Hogares de Nuevo México CP. 45160 Zapopan, Jal.</p>
-            <p><i class="fas fa-phone"></i> <a href="tel:3319588421">33 1958 8421</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:3319590140">33 1959 0140</a></p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:ventas@lesamx.com">ventas@lesamx.com</a></p>
             <a href="https://www.google.com/maps/place/Lat+Juan+Gil+Preciado+4176,+Hogares+de+Nuevo+M%C3%A9xico,+45160+Zapopan,+Jal.,+M%C3%A9xico/@20.6745,-103.4567,17z/data=!3m1!4b1!4m5!3m4!1s0x8428b3f9f9f9f9f9:0x1c9f1c9f1c9f1c9f!8m2!3d20.6745!4d-103.4567" target="_blank" class="ver-mapa">
               <i class="fas fa-map-marked-alt"></i> Ver en mapa
@@ -3541,7 +3564,7 @@
           <div class="sucursal-info">
             <h3>SUCURSAL PUNTO SUR</h3>
             <p><i class="fas fa-map-marker-alt"></i> Av. Camino Real a Colima 150<br>CP. 45602 San Pedro Tlaquepaque</p>
-            <p><i class="fas fa-phone"></i> <a href="tel:3319588421">33 1958 8421</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:3319590140">33 1959 0140</a></p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:ventas@lesamx.com">ventas@lesamx.com</a></p>
             <a href="https://www.google.com/maps/place/Av+Camino+Real+a+Colima+150,+San+Pedro+Tlaquepaque,+Jal.,+M%C3%A9xico/@20.6083,-103.4187,17z/data=!3m1!4b1!4m5!3m4!1s0x8428b3f9f9f9f9f9:0x1c9f1c9f1c9f1c9f!8m2!3d20.6083!4d-103.4187" target="_blank" class="ver-mapa">
               <i class="fas fa-map-marked-alt"></i> Ver en mapa
@@ -3557,7 +3580,7 @@
           <div class="sucursal-info">
             <h3>SUCURSAL COLIMA</h3>
             <p><i class="fas fa-map-marker-alt"></i> Blvrd Camino Real 670<br>Residencial Los Olivos El Provenir II<br>CP. 28019 Col, Colima.</p>
-            <p><i class="fas fa-phone"></i> <a href="tel:3319588421">33 1958 8421</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:3319590140">33 1959 0140</a></p>
             <p><i class="fas fa-envelope"></i> <a href="mailto:ventas@lesamx.com">ventas@lesamx.com</a></p>
             <a href="https://www.google.com/maps/place/Blvd+Camino+Real+670,+Residencial+Los+Olivos,+28019+Colima,+Col.,+M%C3%A9xico/@19.2678,-103.7229,17z/data=!3m1!4b1!4m5!3m4!1s0x84255e9f9f9f9f9f:0x1c9f1c9f1c9f1c9f!8m2!3d19.2678!4d-103.7229" target="_blank" class="ver-mapa">
               <i class="fas fa-map-marked-alt"></i> Ver en mapa
@@ -3831,16 +3854,16 @@
         
         // Remover clase active de todos los botones y contenidos
         tabButtons.forEach(btn => {
-          btn.style.backgroundColor = '#f5f5f5';
+          btn.style.backgroundColor = '#ff5517';
           btn.style.color = '#1a1a1a';
-          btn.style.border = '1px solid #ddd';
+          btn.style.border = '1px solid #ff5517';
         });
         tabContents.forEach(content => content.classList.remove('active'));
         
         // Agregar estilos al botón activo
-        button.style.backgroundColor = '#BD3768';
+        button.style.backgroundColor = '#FF5517';
         button.style.color = 'white';
-        button.style.border = '1px solid #BD3768';
+        button.style.border = '1px solid #FF5517';
         
         // Mostrar el contenido correspondiente
         document.getElementById(tabId).classList.add('active');
@@ -3858,9 +3881,9 @@
 
 
   <!-- Footer -->
-  <footer style="background-color: #2D4766; color: white; padding: -2rem 0; text-align: center; margin-top: 0rem;">
+  <footer style="background-color: #232935; color: white; padding: -2rem 0; text-align: center; margin-top: 0rem;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 1.5rem;">
-      <p style="margin: 0; font-size: 1rem; font-weight: 400;">&copy; 2025 P&L Paneles - Todos los derechos reservados.</p>
+      <p style="margin: 0; font-size: 1rem; font-weight: 400;">&copy; 2025 paneltermico - Todos los derechos reservados.</p>
     </div>
   </footer>
 
